@@ -1,0 +1,47 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails"
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com for more book information.
+-->
+<html>
+  <head>
+    <title>ADMINISTER Pragprog Books Online Store</title>
+    <%= stylesheet_link_tag "scaffold", "depot", "admin", :media => "all" %>
+  </head>
+  <body>
+    <div id="banner">
+      <%= @page_title || "Administer Bookshelf" %>
+    </div>      
+    <div id="columns">
+      <div id="side">
+	<% if session[:user_id] -%>    
+	<%= link_to("Products",   :controller => "admin", 
+                                  :action => "list") %><br />
+	<%= link_to("Shipping",   :controller => "admin", 
+                                  :action => "ship") %><br />
+ 	<hr/>
+
+	<%= link_to("Add user",   :controller => "login",
+                                  :action => "add_user") %><br />
+	<%= link_to("List users", :controller => "login",
+                                  :action => "list_users") %><br />
+
+ 	<hr/>
+	
+	<%= link_to("Log out",    :controller => "login",
+                                  :action => "logout") %>
+
+        <% end -%>
+      </div>
+	
+      <div id="main">
+        
+        <% if flash[:notice] -%>
+          <div id="notice"><%= flash[:notice] %></div>
+        <% end -%>
+	
+	<%= @content_for_layout %>
+      </div>
+    </div>
+  </body>
+</html>

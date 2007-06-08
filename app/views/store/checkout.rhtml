@@ -1,0 +1,45 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails"
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com for more book information.
+-->
+<% @page_title = "Checkout" -%>
+
+<%= error_messages_for("order") %>
+
+
+<%= render_component(:action => "display_cart",
+                     :params => { :context => :checkout }) %>
+
+
+<h3>Please enter your details below</h3>
+
+<%= start_form_tag(:action => "save_order") %>
+<table>
+ <tr>
+  <td>Name:</td>
+
+  <td><%= text_field("order", "name", "size" => 40 ) %></td>
+ </tr>
+ <tr>
+  <td>EMail:</td>
+  <td><%= text_field("order", "email", "size" => 40 ) %></td>
+ </tr>
+ <tr valign="top">
+  <td>Address:</td>
+  <td><%= text_area("order", "address", "cols" => 40, "rows"  => 5) %></td>
+ </tr>
+
+ <tr>
+   <td>Pay using:</td>
+   <td><%= 
+     options = [["Select a payment option", ""]] + Order::PAYMENT_TYPES
+     select("order", "pay_type", options) 
+   %></td>
+ </tr>
+ <tr>
+   <td></td>
+   <td><%= submit_tag(" CHECKOUT ") %></td>
+ </tr>
+</table>
+<%= end_form_tag %>

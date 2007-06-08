@@ -1,0 +1,49 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails"
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com for more book information.
+-->
+<% @page_title = "Your Pragmatic Cart" -%>
+
+<div id="cartmenu">
+
+  <ul>
+    <li><%= link_to 'Continue shopping', :action => "index" %></li>
+    <% unless params[:context] == :checkout -%>
+    <li><%= link_to 'Empty cart',        :action => "empty_cart" %></li>
+    <li><%= link_to 'Checkout',          :action => "checkout" %></li>
+    <% end -%>
+  </ul>
+
+</div>
+
+<table cellpadding="10" cellspacing="0">
+  <tr class="carttitle">
+    <td rowspan="2">Qty</td>
+    <td rowspan="2">Description</td>
+    <td colspan="2">Price</td>
+  </tr>
+  <tr class="carttitle">
+    <td>Each</td>
+    <td>Total</td>
+  </tr>
+
+<% 
+for item in @items 
+  product = item.product
+-%>
+  <tr>
+    <td><%= item.quantity %></td>
+    <td><%= h(product.title) %></td>
+    <td align="right"><%= fmt_dollars(item.unit_price) %></td>
+    <td align="right"><%= fmt_dollars(item.unit_price * item.quantity) %></td>
+  </tr>
+
+<% end %>
+
+  <tr>
+    <td colspan="3" align="right"><strong>Total:</strong></td>
+    <td id="totalcell"><%= fmt_dollars(@cart.total_price) %></td>
+  </tr>
+
+</table>
