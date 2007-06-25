@@ -1,0 +1,2097 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Rupali Kothari</Author>
+  <LastAuthor>bret.pettichord</LastAuthor>
+  <Created>2006-08-08T17:58:52Z</Created>
+  <LastSaved>2006-11-20T21:00:02Z</LastSaved>
+  <Company>DataCert Inc.</Company>
+  <Version>11.8036</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>4425</WindowHeight>
+  <WindowWidth>4515</WindowWidth>
+  <WindowTopX>5025</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ActiveSheet>1</ActiveSheet>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <Font x:Family="Swiss" ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s22">
+   <Font x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+  </Style>
+  <Style ss:ID="s24">
+   <Alignment ss:Vertical="Bottom"/>
+   <Font x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Font ss:Size="8"/>
+  </Style>
+  <Style ss:ID="s26">
+   <Font ss:Size="4"/>
+  </Style>
+  <Style ss:ID="s27">
+   <Font ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s28">
+   <Font ss:Size="8"/>
+  </Style>
+  <Style ss:ID="s29">
+   <Font x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s30">
+   <Interior/>
+  </Style>
+  <Style ss:ID="s31">
+   <Interior ss:Color="#FFFF00" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s32">
+   <Font/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s33">
+   <Font x:Family="Swiss" ss:Size="8" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s34">
+   <Font x:Family="Swiss" ss:Bold="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s35">
+   <Font x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s36">
+   <Font x:Family="Swiss" ss:Size="8"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Control Panel">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="6" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="258"/>
+   <Column ss:AutoFitWidth="0" ss:Width="94.5"/>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Real Estate User</Data></Cell>
+    <Cell><Data ss:Type="String">hhernandez</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Taggart Real Estate Invoice ID</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Taggart Corporate Invoice ID</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">worksheet to run</Data></Cell>
+    <Cell><Data ss:Type="String">Invoices</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">scenario to run</Data></Cell>
+    <Cell><Data ss:Type="String">Accounting Review</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Validate Destinations</Data></Cell>
+    <Cell><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Invoices">
+  <Table ss:ExpandedColumnCount="25" ss:ExpandedRowCount="36" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="29.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="61.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="189.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="98.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="145.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="45.75" ss:Span="19"/>
+   <Row>
+    <Cell ss:Index="6" ss:StyleID="s21"><Data ss:Type="String">Scenarios</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">User Mask Fixture</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="22.5" ss:StyleID="s23">
+    <Cell ss:Index="2" ss:StyleID="s24"><Data ss:Type="String">Right Notes</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s25"><Data ss:Type="String">Print</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">PDF</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accounting Review</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accounting Edit</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Allocation Edit</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Copy</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Edit Step</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Reject</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Restart</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Bulk Update</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Bulk Pay</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Assign Budget</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Approve</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Pay</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Edit Route</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Matter rights</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Update</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Coordinator</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Error Manager</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Error Update</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s26">
+    <Cell ss:Index="2" ss:StyleID="s27"><Data ss:Type="String">Rights Mask</Data></Cell>
+    <Cell ss:Index="6"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFF7FFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFDFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFEFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFDFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFDFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFEFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFBFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFFBFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFFFBFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFF7FFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFBFFFFFFFFFFFEF7FFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFBFFFE000FFFFEFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFBFFFFFFFFFDFEFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFF7FFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFBFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFFFFFFF0FFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFDFFFFFFFFFFBFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFF0FFFFFFFFFFFF003FFFFFFFFFF</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFFFFFFFFFF07F</Data></Cell>
+    <Cell><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFFFFFFFFFFF7F</Data></Cell>
+   </Row>
+   <Row ss:Index="6">
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Invoice in the Workgroup</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s22"><Data ss:Type="String">Destination Type</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Destination Name</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">MyWork/InvoiceDetail.aspx?InvoiceId=#{$taggart_real_estate_invoice_id}</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit Step</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Update Current Step Details</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Edit Route</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">View Invoice Route</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Print</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Invoice Print</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">View Invoice</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">PDF</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Invoice PDF</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Invoice_PDF.aspx</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Copy</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Invoice Copy</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Restart</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Restart Invoice</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Reject</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Reject Invoice</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link_labeled</Data></Cell>
+    <Cell><Data ss:Type="String">Allocated to Fiscal Period</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Fiscal Period Update</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Approve</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">No Click</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Pay</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">No Click</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link</Data></Cell>
+    <Cell><Data ss:Type="String">Comment</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Add Workflow Comment</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Add Budget</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Create Budget Step 1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link</Data></Cell>
+    <Cell><Data ss:Type="String">Accounting</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">MyWork/InvoiceDetail.aspx?InvoiceId=#{$taggart_real_estate_invoice_id}</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Accounts Payable]</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Add/Edit</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Allocations]</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Update Invoice</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link_labeled</Data></Cell>
+    <Cell><Data ss:Type="String">Matter Name</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Page</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">matter/matter_view.aspx?matterId=1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row ss:StyleID="s22">
+    <Cell><Data ss:Type="String">Invoice not in the Workgroup</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Check Element Fixture</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">MyWork/InvoiceDetail.aspx?InvoiceId=#{$taggart_corporate_invoice_id}</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Check Element Fixture</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">MyWork/Coordinator.aspx</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Pay</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">No Click</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Update</Data></Cell>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Check Element Fixture</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">MyWork/ErrorManagement.aspx</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Re-Evaluate</Data></Cell>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Matters">
+  <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="36" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="29.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="61.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="177.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="98.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="145.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="45.75" ss:Span="7"/>
+   <Row>
+    <Cell ss:Index="6" ss:StyleID="s21"><Data ss:Type="String">Scenarios</Data></Cell>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">User Mask Fixture</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="67.5">
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Right Notes</Data></Cell>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all rights (admin)</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all matter rights removed</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">matter review plus accounting and workflow</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">matter review only</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all rights except matter vendor create</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all rights less accounting rights</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all rights minus accounting update</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all rights minus workflow rights</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s22"><Data ss:Type="String">Rights Mask</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s26"><Data ss:Type="String">0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFFFFFFF0FFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFFFFFFF2FFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFCFFFFFFFFFFFFFFFFFFFF2F2FFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFFFEFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFCFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFDFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFF0FFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+   </Row>
+   <Row ss:Index="6">
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Matter in the Workgroup</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s22"><Data ss:Type="String">Destination Type</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Destination Name</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s22">
+    <Cell><Data ss:Type="String">Check Element Fixture</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Matter/Matter_List.aspx</Data></Cell>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Add</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Add Matter</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Matter/Matter_View.aspx?MatterId=1</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Details]</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Update Matter</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Add Vendor</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Select Vendor</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Workflow for Matter- Default]</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">View Custom Workflow</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link</Data></Cell>
+    <Cell><Data ss:Type="String">Accounting</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Matter/Matter_View.aspx?MatterId=1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Accounts Payable]</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Add/Edit</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Edit [Allocations]</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Update Matter</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row ss:StyleID="s22">
+    <Cell><Data ss:Type="String">Matter not in the Workgroup</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row ss:StyleID="s22">
+    <Cell><Data ss:Type="String">Check Element Fixture</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Matter/Matter_View.aspx?MatterId=4</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s32"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>13</ActiveRow>
+     <ActiveCol>4</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Workgroups">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="34" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="29.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="61.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="189.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="98.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="145.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="45.75" ss:Span="4"/>
+   <Row>
+    <Cell ss:Index="6" ss:StyleID="s21"><Data ss:Type="String">Scenarios</Data></Cell>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="12">
+    <Cell ss:StyleID="s22"><Data ss:Type="String">User Mask Fixture</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="45">
+    <Cell ss:StyleID="s23"/>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Right notes</Data></Cell>
+    <Cell ss:StyleID="s23"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all rights (admin)</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">workflow update removed</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">profession update removed</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">workflow create removed</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">all workgroup rights removed</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Rights Mask</Data></Cell>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:Index="6" ss:StyleID="s26"><Data ss:Type="String">0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFF0FFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFBFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFFFFFFFFFFFEFFF</Data></Cell>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row ss:Index="6">
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Workgroup in the Workgroup</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s22"><Data ss:Type="String">Destination Type</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Destination Name</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Workgroup/Workgroup_List.aspx</Data></Cell>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Add</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Create Workgroup</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Workgroup/Workgroup_View.aspx?WorkgroupId=2</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Workgroup Details]</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Update Workgroup</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link</Data></Cell>
+    <Cell><Data ss:Type="String">Default (System)</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Set Preference</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link</Data></Cell>
+    <Cell><Data ss:Type="String">delete</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Delete Responsibility</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Add</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Update Responsibility</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Workflow for Workgroup- Default]</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">View Custom Workflow</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row ss:StyleID="s22">
+    <Cell><Data ss:Type="String">Workgroup not in the Workgroup</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Workgroup/Workgroup_View.aspx?WorkgroupId=3</Data></Cell>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s32"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s32"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Professionals">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="34" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="29.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="61.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="189.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="98.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="145.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="45.75" ss:Span="4"/>
+   <Row>
+    <Cell ss:Index="6" ss:StyleID="s21"><Data ss:Type="String">Scenarios</Data></Cell>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">User Mask Fixture</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="33.75">
+    <Cell ss:Index="2" ss:StyleID="s22"><Data ss:Type="String">Right notes</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s25"><Data ss:Type="String">all rights (admin)</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">No Professional rights</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Professional update removed</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Professional create removed</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Workflow update removed</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Rights Mask</Data></Cell>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:Index="6" ss:StyleID="s26"><Data ss:Type="String">0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFF0FFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFBFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFFFFFFFFFFFFFFEFFFFFFFFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">0xFFFEFF0FFFFFFFFFFFFFFFFFFFFFFFFF</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Professional in the Workgroup</Data></Cell>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s22"><Data ss:Type="String">Destination Type</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Destination Name</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Professional/Prof_List.aspx</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Add</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Add Professional</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Professional/Prof_View.aspx?ProfessionalId=7</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Link</Data></Cell>
+    <Cell><Data ss:Type="String">Default (System)</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Set Preference</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Edit [Details]</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Update Professional</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell><Data ss:Type="String">Add</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">Add Responsibility</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Button</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Edit [Workflow for Professional- Default]</Data></Cell>
+    <Cell><Data ss:Type="String">Dialog</Data></Cell>
+    <Cell><Data ss:Type="String">View Custom Workflow</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row ss:StyleID="s22">
+    <Cell><Data ss:Type="String">Professional Not in the Workgroup</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"><Data ss:Type="String">Page</Data></Cell>
+    <Cell><Data ss:Type="String">Professional/Prof_View.aspx?ProfessionalId=10</Data></Cell>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="Boolean">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s32"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s32"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s29"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s30"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="6" ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
