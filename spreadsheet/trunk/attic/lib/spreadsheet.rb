@@ -31,6 +31,8 @@ module AIMS
   end
 end
 
+# TODO: add errors for FileNotFound, WorksheetNotFound, EntityNotFound
+
 module Spreadsheet
   class ObjectNotFound < RuntimeError
   end
