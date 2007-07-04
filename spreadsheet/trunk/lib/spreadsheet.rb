@@ -109,7 +109,7 @@
   :continue         Continue from a bookmark
   :pagecount        Continue for n pages after a bookmark
   
-      book = XLS::Book.new(spreadsheet, { OPTIONS }
+      book = Spreadsheet::Book.new(spreadsheet, { OPTIONS }
       book.each do |sheet|
         puts '---' + sheet.name + '---'
         puts sheet.to_s
@@ -318,7 +318,7 @@ module Spreadsheet
     attr_accessor :visible, :continue, :pagecount
     attr_reader :filename, :bookmark 
     def initialize(xlsfile, options={})
-      raise ArgumentError, 'XLS file required for XLS::Parser.new()' if !xlsfile
+      raise ArgumentError, 'XLS file required for Book.new()' if !xlsfile
       
       # Handle options
       self.visible = false
@@ -350,7 +350,7 @@ module Spreadsheet
       @excel['Visible'] = visible
       
       # Get the standard set of Excel constants
-      WIN32OLE.const_load(@excel, ExcelConst) if XLS::ExcelConst.constants == []
+      WIN32OLE.const_load(@excel, ExcelConst) if Spreadsheet::ExcelConst.constants == []
       
       # Make sure we close the workbook at exit 
       # or we'll have a dangling Excel process
