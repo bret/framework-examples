@@ -9,7 +9,6 @@ opt[:pagecount] = false
 opt[:continue] = false
 parser = OptionParser.new do |cli|
   cli.banner += " [file(s) ...]"
-  cli.on('-q', '--quiet', 'Log only warnings and errors')  { opt[:logging] = 'quiet' }
   cli.on('--continue [bookmark]', 'Continue spreadsheet from last checkpoint or designated bookmark') { |opt[:continue]|; opt[:continue] = true if !opt[:continue]}
   cli.on('--pagecount [numpages]', 'Number of pages to process')  { |opt[:pagecount]|}
   cli.on('--help', 'Show the detailed help and quit') { opt[:help] = true  }
@@ -20,7 +19,6 @@ parser.parse!(ARGV)
 
 if opt[:help]
   puts parser.help 
-  puts morehelp
   exit
 end
 
@@ -38,12 +36,15 @@ end
 
 s = Time.now
 spreadsheets.each do |spreadsheet|
-  book = XLS::Book.new(spreadsheet, {:visible  => false,
-                                     :continue => opt[:continue],
-                                     :pagecount => opt[:pagecount] }
-                                     )
+  options = {
+    :visible   => false,
+    :continue  => opt[:continue],
+    :pagecount => opt[:pagecount],
+  } 
+  book = Spreadsheet::Book.new(spreadsheet, options)
   book.each do |sheet|
   puts '---' + sheet.name + '---'
+  puts sheet.to_s
     sheet.each do |record|
       record.each do |cell|
          puts "\t#{cell.header}=#{cell.value}"

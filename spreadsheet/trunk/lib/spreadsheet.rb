@@ -1,22 +1,129 @@
-=begin rdoc
+=begin 
+  Spreadsheet Components
+  ======================
+  
+  Headers: A row or column of descriptions. This cell range abuts
+  the data cells and usually corresponds to the function or method being 
+  called, with the data being parameters or attributes. Headers can also be 
+  preceded with an asterisk(*) if you wish to indicate which headers
+  are required information. These asterisks are automatically removed
+  when the spreadsheet is read. 
+  [Style = Bold, Cell Shaded]
+  
+  Data: The data should comprise the bulk of information on the spreadsheet
+  and represents the parameters used for the function or testcase (which we
+  get from the header cells).
+  [Style = None]
+  
+  Comments: Any text in shaded cells along the top or left of the spreadsheet.
+  You can have as many rows or columns of comments as you like, presuming 
+  all of the other rules are followed.
+  [Style = Bold, Cell Shaded]
+  
+  Valid Data Configurations
+  =========================
+  
+  This library has a few requirements about the format of the
+  worksheet data so it can be properly parsed. For the sake of example, 
+  cells that are shaded are bordered by '.', 'H' represents Header cells and 
+  'd' represents data. Any shaded cell that is blank could be used for comments.
 
-  book = XLS::Book.new(spreadsheet, { ...options... )
-  book.each do |sheet|
-  puts '---' + sheet.name + '---'
-    sheet.each do |record|
-      record.each do |cell|
-         puts "#{cell.header}=#{cell.value}, #{cell.name}"
+  This is the simplest way to format the data with a single
+  row or column of header cells (shaded) with data 
+  
+  + . +---+---+    + . + . + . +   
+  . H | d | d |    . H . H . H .   
+  + . +---+---+    +---+---+---+   
+  . H | d | d |    | d | d | d |   
+  + . +---+---+    +---+---+---+   
+  | H | d | d |    | d | d | d |   
+  + . +---+---+    +---+---+---+   
+
+  You can also add additional shaded columns to the top and
+  left to make room for any comments that may be helpful
+  
+  + . + . + . + . +    + . + . + . + . +   
+  .   .   .   .   .    .   . H . H . H .   
+  + . + . +---+---+    + . +---+---+---+   
+  .   . H | d | d |    .   | d | d | d |   
+  + . + . +---+---+    + . +---+---+---+   
+  .   | H | d | d |    .   | d | d | d |   
+  + . + . +---+---+    + . +---+---+---+   
+
+  The library will inspect the worksheet and determine the first
+  data cell (upper left) by looking for the first non-shaded 
+  cell. The last datacell (lower right) will be used with that first 
+  data cell to form a rectangle representing the boundaries of the 
+  test data. Then, the cells to the left and top of the first data
+  cell will be looked at to see if the text in the cell is bolded. 
+  If so, it's assumed to be the header row. 
+
+  Skipping Data
+  =============
+  
+  The following items will be skipped and not parsed. This gives an 
+  easy way to disable data
+  
+  - Spreadsheet tabs that are colored (right click the tab and change the
+  Tab Color) 
+  - Spreadsheet tabs that START with a comment (using #). 
+  - Spreadsheet rows that are italicized
+  
+  Note that you CAN have comments in a tab and the comment portion 
+  will be stripped before it's used. This is actually useful because 
+  it works around Excel's requirement that every tab name is unique.
+  So for example you could have MyTab#a, MyTab#b as separate tabs in
+  the spreadsheet and MyTab will be returned by Book.each. (though 
+  you do need to specify the full tabname with the comment when using
+  the :continue option) 
+
+  Continuation
+  =============
+  
+  There are a few features around continuing from a bookmark or a given 
+  point in the spreadsheet. This is accomplished with the :continue option. 
+  
+  While the spreadsheet is parsed, a bookmark is dropped before each row/col
+  of data is read. This bookmark is stored in the '.bookmarks' file and is 
+  unique for each spreadsheet run in that directory. If for some reason the
+  script execution is interrupted or the script aborts unexpectedly, you can
+  simply pick up where you left off by using :continue => true. 
+  
+  Further you have much more control and can specify a specific tab to start
+  from and even a row/col (depending on the spreadsheet format). This follows
+  the format :continue => TabName[row/col]. So you could do any of the 
+  following: MyTab, MyTab[F], MyOtherTab[10] and the lib will not start returning 
+  any spreadsheet data till that location is found. 
+  
+  You can also specify a maximum number of pages to process when you're 
+  continuing using the :pagecount => [number]. In conjunction with :continue, 
+  this allows you to run exactly one tab if you like. Without :pagecount, the
+  spreadsheet will be read from the continuation point till the end of the 
+  workbook. 
+  
+  Example
+  =======
+
+  OPTIONS = 
+  :visible          Make the Excel Spreadsheet visible when processing
+  :continue         Continue from a bookmark
+  :pagecount        Continue for n pages after a bookmark
+  
+      book = XLS::Book.new(spreadsheet, { OPTIONS }
+      book.each do |sheet|
+        puts '---' + sheet.name + '---'
+        puts sheet.to_s
+          sheet.each do |record|
+            record.each do |cell|
+               puts "\t#{cell.header}=#{cell.value}"
+            end
+          end
+        end  
       end
-    end
-  end  
- end
-
-what and how we skip things
+ 
 =end
 
-
-
-module XLS
+module Spreadsheet
 
   require 'logger'
   require 'singleton'
@@ -198,7 +305,7 @@ module XLS
   class ExcelConst; include Singleton; end
   
   # This object is a container for the Excel workbook and 
-  # any options passed into the library. Supported options include
+  # any options passed into the library. 
   # 
   # :visible          Make the Excel Spreadsheet visible when processing
   # :continue         Continue from a bookmark
@@ -302,7 +409,6 @@ module XLS
         (@lastrow, @lastcol)   = locate_last_data_cell
         (@firstrow, @firstcol) = locate_first_data_cell
         (@headers, @style)     = locate_headers
-        self.to_s
       end
       def to_s
         "firstrow = #{@firstrow}\n" +
@@ -461,9 +567,12 @@ module XLS
         raise RunTimeError, "Unable to locate first data cell on worksheet '#{@sheet.name}'"
       end
       def locate_last_data_cell
-        # Find better way as somehow this gets extra blanks on some pages
-        row = @o.UsedRange.Rows.Count
-        col = @o.UsedRange.Columns.Count
+        row = @o.Cells.Find('What'            => '*',
+                            'SearchDirection' => ExcelConst::XlPrevious,
+                            'SearchOrder'     => ExcelConst::XlByRows).Row
+        col = @o.Cells.Find('What'            => '*',
+                            'SearchDirection' => ExcelConst::XlPrevious,
+                            'SearchOrder'     => ExcelConst::XlByColumns).Column
         return row, col
       end
       def locate_headers
