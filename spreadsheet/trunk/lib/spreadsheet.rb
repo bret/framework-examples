@@ -538,7 +538,11 @@ module Spreadsheet
           @value = @value.to_s.strip
           if @value == ''
             @value = nil 
-          elsif @value =~ ARRAY || @value =~ HASH || @value =~ BOOL || @value =~ NUMBER
+          elsif @value =~ ARRAY || @value =~ HASH || @value =~ BOOL 
+            @value = eval(@value)
+          elsif @value =~ NUMBER
+            #handle Excel conversion of integer to float
+            @value.gsub!(/\.0\Z/,'') 
             @value = eval(@value)
           end
           #TODO: find a way to add other handlers
