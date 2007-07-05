@@ -121,6 +121,11 @@
           end
         end  
       end
+   
+  TODO: 
+  Handle true/false, numbers so we're not passing in the string
+  Work out how to handle verification - maybe using tab have a static method?
+  
  
 =end
 
@@ -184,6 +189,8 @@ module Spreadsheet
   # The pagecount allows the user to start at the desired bookmark
   # but only run through 1 or more sheets in the workbook
   class Bookmark
+    class ObjectNotFound < RuntimeError; end
+    
     @foundpage   = false
     @foundrecord = false
     attr_accessor :pagecount, :page, :record
@@ -199,7 +206,7 @@ module Spreadsheet
       # use the bookmark specified by the user
       if continue == true
         bookmarkname = self.get 
-        raise ArgumentError, "No bookmark found for '#{@booktitle}'" if bookmarkname.nil?
+        raise Bookmark::ObjectNotFound, "No bookmark found for '#{@booktitle}'" if bookmarkname.nil?
       else
         bookmarkname = continue
       end
@@ -228,7 +235,7 @@ module Spreadsheet
           # Trap the case when a record is specified 
           # for a page and it does not exist
           if !@foundrecord && what != @page
-            raise ArgumentError, "Record #{@record} does not exist on page #{@page}"
+            raise Bookmark::ObjectNotFound, "Record #{@record} does not exist on page #{@page}"
           end
           
           true
@@ -244,7 +251,7 @@ module Spreadsheet
           end
         end
       when :record
-        raise ArgumentError, 'Should never get here: page should have been found first' if !@foundpage
+        raise Bookmark::ObjectNotFound, 'Should never get here: page should have been found first' if !@foundpage
         if @foundrecord
           true
         else
@@ -342,7 +349,7 @@ module Spreadsheet
       end
       
       @filename = xlsfile
-      raise ArgumentError, "Unable to find file: '#{@filename}'" if ! File.file?(@filename)
+      raise IOError, "Unable to find file: '#{@filename}'" if ! File.file?(@filename)
       @bookmark = Bookmark.new(@filename, continue, pagecount) if continue
 
       # Open the workbook and get the ole reference to the workbook object
@@ -356,6 +363,7 @@ module Spreadsheet
       # Make sure we close the workbook at exit 
       # or we'll have a dangling Excel process
       at_exit {
+        @o.close if @o
         if @excel
           while @excel.ActiveWorkbook
             @excel.ActiveWorkbook.Close(0)
@@ -503,6 +511,11 @@ module Spreadsheet
       end
       class Cell
         attr_reader :name, :value, :recordid
+        ARRAY  = /\A\[[^\]]+\]\Z/
+        HASH   = /\A\{[^\}]+\}\Z/
+        BOOL   = /\A(true|false)\Z/i
+        NUMBER = /\A\d+\.??\d*?\Z/
+
         def initialize(sheet, record_index, cell_index)
           @sheet       = sheet
           @book        = sheet.book
@@ -525,19 +538,13 @@ module Spreadsheet
           @value = @value.to_s.strip
           if @value == ''
             @value = nil 
-          else
-            # interpret arrays, hashes literally
-            if @value =~ /\A\[[^\]]+\]\Z/ || @value =~ /\A\{[^\}]+\}\Z/
-              # Is an array or hash
-            else # treat all other entries as strings
-              #TODO:  Have options on how to handle these so we can 
-              # set formatters to customize how to handle the raw spreadsheet data
-              @value.gsub!(/\.0/,'') if @value =~ /\d+\.0$/ # handle excel automatic handling of integers to real
-              if @value =~ /(\d{4})\/(\d{2})\/(\d{2}) \d{2}:\d{2}:\d{2}$/  # handle excel automatic handling of dates
-                @value = "#{$2}/#{$3}/#{$1}"
-              end
-            end
-          end  
+          elsif @value =~ ARRAY || @value =~ HASH || @value =~ BOOL || @value =~ NUMBER
+            @value = eval(@value)
+          end
+          #TODO: find a way to add other handlers
+          #if @value =~ /(\d{4})\/(\d{2})\/(\d{2}) \d{2}:\d{2}:\d{2}$/  # handle excel automatic handling of dates
+           #  @value = "#{$2}/#{$3}/#{$1}"
+          #end
           
           # Put together the cell's name
           column_letter = @sheet.colname(@col)
@@ -565,7 +572,7 @@ module Spreadsheet
             end
           end
         end
-        raise RunTimeError, "Unable to locate first data cell on worksheet '#{@sheet.name}'"
+        raise ObjectError, "Unable to locate first data cell on worksheet '#{@sheet.name}'"
       end
       def locate_last_data_cell
         row = @o.Cells.Find('What'            => '*',
