@@ -1,4 +1,5 @@
 =begin 
+
   Spreadsheet Components
   ======================
   
@@ -109,7 +110,7 @@
   :continue         Continue from a bookmark
   :pagecount        Continue for n pages after a bookmark
   
-      book = Spreadsheet::Book.new(spreadsheet, { OPTIONS }
+      book = Spreadsheet::Book.new(spreadsheet, { :visible => true }
       book.each do |sheet|
         puts '---' + sheet.name + '---'
         puts sheet.to_s
