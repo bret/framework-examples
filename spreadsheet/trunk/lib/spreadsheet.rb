@@ -1,4 +1,10 @@
-=begin 
+=begin rdoc
+
+Look at FIT
+check for method=
+arity on method returns arg count
+look at bugzilla for whether there's a bug logged against test
+webgen
 
   Spreadsheet Components
   ======================
@@ -78,8 +84,8 @@
   you do need to specify the full tabname with the comment when using
   the :continue option) 
 
-  Continuation
-  =============
+  Bookmarks
+  ==========
   
   There are a few features around continuing from a bookmark or a given 
   point in the spreadsheet. This is accomplished with the :continue option. 
@@ -130,18 +136,12 @@
 =end
 
 module Spreadsheet
-
   require 'logger'
   require 'singleton'
-  
-  class Array
-    def diff(a)
-      ary = dup
-      a.each {|i| ary.delete_at(i) if i = ary.index(i)}
-      ary
-    end
-  end
-  
+
+  # Singleton Class to store Excel Constant Variables
+  class ExcelConst; include Singleton; end
+
   # This is for testing only
   # Will be removed later
   class Timer
@@ -223,9 +223,13 @@ module Spreadsheet
       @page, @record = parse_bookmark(bookmarkname)
       raise ArgumentError, "Invalid record '#{@record}' - argument must be a row or column name" if @record && @record.length > 1
     end
+    # Check to see if the current record or page matches the bookmark.
+    # For example, found?(:sheet, [pagename]) or found?(:record, [row/col])
+    # where pagename is the name of the worksheet and row/col could be the
+    # row or column depending on the style of the page (eg: 'A' or 6)
     def found?(how, what)
       case how
-      when :page
+      when :sheet
         if @foundpage
           # increment our page counter and exit if 
           # we hit a specified page count
@@ -309,8 +313,6 @@ module Spreadsheet
     end
   end
   
-  # Singleton Class to store Excel Constant Variables
-  class ExcelConst; include Singleton; end
   
   # This object is a container for the Excel workbook and 
   # any options passed into the library. 
@@ -358,7 +360,7 @@ module Spreadsheet
       @excel['Visible'] = visible
       
       # Get the standard set of Excel constants
-      WIN32OLE.const_load(@excel, ExcelConst) if Spreadsheet::ExcelConst.constants == []
+      WIN32OLE.const_load(@excel, ExcelConst) if ExcelConst.constants == []
       
       # Make sure we close the workbook at exit 
       # or we'll have a dangling Excel process
@@ -373,14 +375,12 @@ module Spreadsheet
       } 
     end  
     
-    # Iterate over the worksheets in the workbook and return a Sheet object. 
-    # Note that we skip 
     def each
       @o.Worksheets.each do |worksheet| 
         next if @o.Worksheets(worksheet.name).Visible == 0              # Skip hidden worksheets
         next if worksheet.name =~ /^#/                                     # Skip commented sheets
         next if worksheet.Tab.ColorIndex != ExcelConst::XlColorIndexNone   # Skip worksheets with colored tabs 
-        next if continue && !@bookmark.found?(:page, worksheet.name)       # Skip if we have not found a bookmark
+        next if continue && !@bookmark.found?(:sheet, worksheet.name)       # Skip if we have not found a bookmark
         yield sheet(worksheet) 
       end
     end
@@ -404,203 +404,201 @@ module Spreadsheet
     def sheet(worksheet)
       Sheet.new(self, worksheet)
     end
-    class Sheet
-      attr_reader :style, :name, :headers, :book,
-                  :firstrow, :firstcol, :lastrow, :lastcol
-      def initialize(book, worksheet)
-        # TODO: Add check for duplicates if option set
-        @book     = book
-        @o        = worksheet
-        @name     = worksheet.name
-        self.focus
-        # Order here is important because in these functions we
-        # will use the class variables from the prior call
-        (@lastrow, @lastcol)   = locate_last_data_cell
-        (@firstrow, @firstcol) = locate_first_data_cell
-        (@headers, @style)     = locate_headers
-      end
-      def to_s
-        "firstrow = #{@firstrow}\n" +
-        "firstcol = #{@firstcol}\n" +
-        "lastrow  = #{@lastrow}\n"  +
-        "lastcol  = #{@lastcol}\n"  +
-        "style    = #{@style}\n"
-      end
-      def focus
-        @o.Select
-      end
-      # A cell is a data cell if the color attribute for the cell is not set
-      def datacell?(row,col)
-        @o.Cells(row,col).Interior.ColorIndex == ExcelConst::XlColorIndexNone
-      end
-      # Get an array of the values of cells in the range describing the row or column      
-      def cellrangevals(index, style=@style)
-        range = cellrange(index, style)
-        case style
-        when :row
-          range['Value'][0] 
-        when :col
-          range['Value'].map{ |v| v[0] }
-        end
-      end
-      # Get the ole range object for a row or column      
-      def cellrange(index, style=@style)
-        case style
-        when :row
-          @o.Range("#{colname(@firstcol)}#{index}:#{colname(@lastcol)}#{index}")
-        when :col
-          @o.Range("#{colname(index)}#{@firstrow}:#{colname(index)}#{@lastrow}")
-        end
-      end
-      # Translate a numerical column index to the alpha worksheet column the user sees
-      def colname(col)
-        @o.Columns(col).address.slice!(/(\w+)/)
-      end
-      # Iterate over the worksheet, returning Records for each row/col
-      def each
-        case @style
-        when :row
-          firstrecord = @firstrow
-          lastrecord  = @lastrow 
-        when :col
-          firstrecord = @firstcol
-          lastrecord  = @lastcol
-        end
-         (firstrecord..lastrecord).each do |record_index|
-          yield self.record(record_index)
-        end
-      end
-      def ole_object
-        @o
-      end
-      
-      # Records store the information of a particular row/col of 
-      # a worksheet and allow iterating through the Record's Cells
-      def record (index)
-        Record.new(self, index)
-      end
-      class Record
-        #GRAY   = 0xEEEEEE
-        def initialize(sheet, index)
-          @sheet       = sheet
-          @book        = sheet.book
-          @recordindex = index
-        end
-        def each
-          #@sheet.cellrange(@recordindex).Interior.Color = GRAY 
-          @sheet.headers.each_index do |cell_index| # should be a value for each header
-            c = @sheet.cell(@recordindex,cell_index + 1)
-            return if @book.continue && ! @book.bookmark.found?(:record, c.recordid)
-            if c.value 
-              # Drop a bookmark so we can continue from it later
-              @book.bookmark.set(@sheet.name,c.recordid) if @book.continue
-              yield c 
-            end
-          end
-          #@sheet.cellrange(@recordindex).Interior.Color = ExcelConst::XlColorIndexNone 
-        end
-      end
-      
-      # Cells store information on a specific worksheet cell. 
-      # The name is the Excel name for the cell (ie: A1, B2, etc), 
-      # the value is the value of the cell and the header is the 
-      # header for that row/column (usually the attribute/function parameter
-      # we're trying to set)
-      def cell (record_index, cell_index)
-        Cell.new(self, record_index, cell_index)
-      end
-      class Cell
-        attr_reader :name, :value, :recordid
-        ARRAY  = /\A\[[^\]]+\]\Z/
-        HASH   = /\A\{[^\}]+\}\Z/
-        BOOL   = /\A(true|false)\Z/i
-        NUMBER = /\A\d+\.??\d*?\Z/
-
-        def initialize(sheet, record_index, cell_index)
-          @sheet       = sheet
-          @book        = sheet.book
-          @o           = sheet.ole_object
-          @cellindex   = cell_index
-          @recordindex = record_index
-          case @sheet.style
-          when :row
-            @row = @recordindex 
-            @col = @cellindex + @sheet.firstcol - 1 # taking into account the start of the used data range
-            @value = @o.Cells(@row,@col).Value
-          when :col
-            @row = @cellindex + @sheet.firstrow - 1 # taking into account the start of the used data range
-            @col = @recordindex 
-            @value = @o.Cells(@row,@col).Value
-          end
-          # Ignore blank values. There's not much use for cells 
-          # that are not set so skip them and normalize the return 
-          # to nil so we know that's the case
-          @value = @value.to_s.strip
-          if @value == ''
-            @value = nil 
-          elsif @value =~ ARRAY || @value =~ HASH || @value =~ BOOL 
-            @value = eval(@value)
-          elsif @value =~ NUMBER
-            #handle Excel conversion of integer to float
-            @value.gsub!(/\.0\Z/,'') 
-            @value = eval(@value)
-          end
-          #TODO: find a way to add other handlers
-          #if @value =~ /(\d{4})\/(\d{2})\/(\d{2}) \d{2}:\d{2}:\d{2}$/  # handle excel automatic handling of dates
-           #  @value = "#{$2}/#{$3}/#{$1}"
-          #end
-          
-          # Put together the cell's name
-          column_letter = @sheet.colname(@col)
-          @name = column_letter + @row.to_s
-          
-          # The recordid is the row/col for the record
-          case @sheet.style
-          when :row
-            @recordid = @row.to_s
-          when :col
-            @recordid = column_letter
-          end
-        end
-        def header
-          @sheet.headers[@cellindex-1]
-        end
-      end
-      
-      private
-      def locate_first_data_cell
-       (1..@lastrow).each do |row|
-         (1..@lastcol).each do |col|
-            if datacell?(row,col)
-              return row, col
-            end
-          end
-        end
-        raise ObjectError, "Unable to locate first data cell on worksheet '#{@sheet.name}'"
-      end
-      def locate_last_data_cell
-        row = @o.Cells.Find('What'            => '*',
-                            'SearchDirection' => ExcelConst::XlPrevious,
-                            'SearchOrder'     => ExcelConst::XlByRows).Row
-        col = @o.Cells.Find('What'            => '*',
-                            'SearchDirection' => ExcelConst::XlPrevious,
-                            'SearchOrder'     => ExcelConst::XlByColumns).Column
-        return row, col
-      end
-      def locate_headers
-        headerrow = @firstrow - 1
-        testcell = @o.Cells(headerrow,@firstcol)
-        if headerrow > 0 && testcell.Font.Bold && testcell.Value.to_s.strip != ''
-          style = :row
-          headers  = cellrangevals(@firstrow-1, :row)
-        else
-          style = :col
-          headers  = cellrangevals(@firstcol-1, :col)
-        end
-        return headers, style
+  end
+  
+  class Sheet
+    attr_reader :style, :name, :headers, :book,
+                :firstrow, :firstcol, :lastrow, :lastcol
+    def initialize(book, worksheet)
+      # TODO: Add check for duplicates if option set
+      @book     = book
+      @o        = worksheet
+      @name     = worksheet.name
+      self.focus
+      # Order here is important because in these functions we
+      # will use the class variables from the prior call
+      (@lastrow, @lastcol)   = locate_last_data_cell
+      (@firstrow, @firstcol) = locate_first_data_cell
+      (@headers, @style)     = locate_headers
+    end
+    def to_s
+      "firstrow = #{@firstrow}\n" +
+      "firstcol = #{@firstcol}\n" +
+      "lastrow  = #{@lastrow}\n"  +
+      "lastcol  = #{@lastcol}\n"  +
+      "style    = #{@style}\n"
+    end
+    def focus
+      @o.Select
+    end
+    # A cell is a data cell if the color attribute for the cell is not set
+    def datacell?(row,col)
+      @o.Cells(row,col).Interior.ColorIndex == ExcelConst::XlColorIndexNone
+    end
+    # Get an array of the values of cells in the range describing the row or column      
+    def cellrangevals(index, style=@style)
+      range = cellrange(index, style)
+      case style
+      when :row
+        range['Value'][0] 
+      when :col
+        range['Value'].map{ |v| v[0] }
       end
     end
-    
+    # Get the ole range object for a row or column      
+    def cellrange(index, style=@style)
+      case style
+      when :row
+        @o.Range("#{colname(@firstcol)}#{index}:#{colname(@lastcol)}#{index}")
+      when :col
+        @o.Range("#{colname(index)}#{@firstrow}:#{colname(index)}#{@lastrow}")
+      end
+    end
+    # Translate a numerical column index to the alpha worksheet column the user sees
+    def colname(col)
+      @o.Columns(col).address.slice!(/(\w+)/)
+    end
+    def each
+      case @style
+      when :row
+        firstrecord = @firstrow
+        lastrecord  = @lastrow 
+      when :col
+        firstrecord = @firstcol
+        lastrecord  = @lastcol
+      end
+       (firstrecord..lastrecord).each do |record_index|
+        yield self.record(record_index)
+      end
+    end
+    def ole_object
+      @o
+    end
+    def record (index)
+      Record.new(self, index)
+    end
+    def cell (record_index, cell_index)
+      Cell.new(self, record_index, cell_index)
+    end
+  private
+    def locate_first_data_cell
+     (1..@lastrow).each do |row|
+       (1..@lastcol).each do |col|
+          if datacell?(row,col)
+            return row, col
+          end
+        end
+      end
+      raise ObjectError, "Unable to locate first data cell on worksheet '#{@sheet.name}'"
+    end
+    def locate_last_data_cell
+      row = @o.Cells.Find('What'            => '*',
+                          'SearchDirection' => ExcelConst::XlPrevious,
+                          'SearchOrder'     => ExcelConst::XlByRows).Row
+      col = @o.Cells.Find('What'            => '*',
+                          'SearchDirection' => ExcelConst::XlPrevious,
+                          'SearchOrder'     => ExcelConst::XlByColumns).Column
+      return row, col
+    end
+    def locate_headers
+      headerrow = @firstrow - 1
+      testcell = @o.Cells(headerrow,@firstcol)
+      if headerrow > 0 && testcell.Font.Bold && testcell.Value.to_s.strip != ''
+        style = :row
+        headers  = cellrangevals(@firstrow-1, :row)
+      else
+        style = :col
+        headers  = cellrangevals(@firstcol-1, :col)
+      end
+      return headers, style
+    end
   end
+
+  # Records store the information of a particular row/col of 
+  # a worksheet and allow iterating through the Record's Cells
+  class Record
+    def initialize(sheet, index)
+      @sheet       = sheet
+      @book        = sheet.book
+      @recordindex = index
+    end
+    def each
+      #@sheet.cellrange(@recordindex).Interior.Color = GRAY 
+      @sheet.headers.each_index do |cell_index| # should be a value for each header
+        cell = @sheet.cell(@recordindex,cell_index + 1)
+        return if @book.continue && ! @book.bookmark.found?(:record, cell.recordid)
+        if cell.value 
+          # Drop a bookmark so we can continue from it later
+          @book.bookmark.set(@sheet.name,cell.recordid) if @book.continue
+          yield cell 
+        end
+      end
+      #@sheet.cellrange(@recordindex).Interior.Color = ExcelConst::XlColorIndexNone 
+    end
+  end
+  
+  # Cells store information on a specific worksheet cell. 
+  # The name is the Excel name for the cell (ie: A1, B2, etc), 
+  # the value is the value of the cell and the header is the 
+  # header for that row/column (usually the attribute/function parameter
+  # we're trying to set)
+  class Cell
+    ARRAY  = /\A\[[^\]]+\]\Z/
+    HASH   = /\A\{[^\}]+\}\Z/
+    BOOL   = /\A(true|false)\Z/i
+    NUMBER = /\A\d+\.??\d*?\Z/
+    attr_reader :name, :value, :recordid
+
+    def initialize(sheet, record_index, cell_index)
+      @sheet       = sheet
+      @book        = sheet.book
+      @o           = sheet.ole_object
+      @cellindex   = cell_index
+      @recordindex = record_index
+      case @sheet.style
+      when :row
+        @row = @recordindex 
+        @col = @cellindex + @sheet.firstcol - 1 # taking into account the start of the used data range
+        @value = @o.Cells(@row,@col).Value
+      when :col
+        @row = @cellindex + @sheet.firstrow - 1 # taking into account the start of the used data range
+        @col = @recordindex 
+        @value = @o.Cells(@row,@col).Value
+      end
+      # Ignore blank values. There's not much use for cells 
+      # that are not set so skip them and normalize the return 
+      # to nil so we know that's the case
+      @value = @value.to_s.strip
+      if @value == ''
+        @value = nil 
+      elsif @value =~ ARRAY || @value =~ HASH || @value =~ BOOL 
+        @value = eval(@value)
+      elsif @value =~ NUMBER
+        #handle Excel conversion of integer to float
+        @value.gsub!(/\.0\Z/,'') 
+        @value = eval(@value)
+      end
+      #TODO: find a way to add other handlers
+      #if @value =~ /(\d{4})\/(\d{2})\/(\d{2}) \d{2}:\d{2}:\d{2}$/  # handle excel automatic handling of dates
+       #  @value = "#{$2}/#{$3}/#{$1}"
+      #end
+      
+      # Put together the cell's name
+      column_letter = @sheet.colname(@col)
+      @name = column_letter + @row.to_s
+      
+      # The recordid is the row/col for the record
+      case @sheet.style
+      when :row
+        @recordid = @row.to_s
+      when :col
+        @recordid = column_letter
+      end
+    end
+    def header
+      @sheet.headers[@cellindex-1]
+    end
+  end
+
   
 end # module
