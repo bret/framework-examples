@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>each (Spreadsheet::Record)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/spreadsheet.rb, line 551</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>
+      <span class="ruby-ivar">@sheet</span>.<span class="ruby-identifier">headers</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cell_index</span><span class="ruby-operator">|</span> <span class="ruby-comment cmt"># should be a value for each header</span>
+        <span class="ruby-identifier">cell</span> = <span class="ruby-ivar">@sheet</span>.<span class="ruby-identifier">cell</span>(<span class="ruby-ivar">@recordindex</span>,<span class="ruby-identifier">cell_index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@book</span>.<span class="ruby-identifier">continue</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span> <span class="ruby-ivar">@book</span>.<span class="ruby-identifier">bookmark</span>.<span class="ruby-identifier">found?</span>(<span class="ruby-identifier">:record</span>, <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">recordid</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">value</span> 
+          <span class="ruby-comment cmt"># Drop a bookmark so we can continue from it later</span>
+          <span class="ruby-ivar">@book</span>.<span class="ruby-identifier">bookmark</span>.<span class="ruby-identifier">set</span>(<span class="ruby-ivar">@sheet</span>.<span class="ruby-identifier">name</span>,<span class="ruby-identifier">cell</span>.<span class="ruby-identifier">recordid</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@book</span>.<span class="ruby-identifier">continue</span>
+          <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">cell</span> 
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

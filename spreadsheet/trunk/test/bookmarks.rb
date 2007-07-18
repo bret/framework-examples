@@ -1,7 +1,8 @@
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..')
+
 require 'spec'
 require 'lib/spreadsheet'
 
-TESTFILE = 'examples/TeamRaiser_model.Spreadsheet'
 
 describe "Bookmark" do
   it 'should fail if booktitle not specified' do

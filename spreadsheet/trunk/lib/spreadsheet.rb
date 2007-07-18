@@ -1,10 +1,46 @@
+=begin license
+  ---------------------------------------------------------------------------
+  Copyright (c) 2007, Hugh McGowan
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+  3. Neither the names Paul Rogers, nor Bret Pettichord nor the names of any 
+  other contributors to this software may be used to endorse or promote 
+  products derived from this software without specific prior written 
+  permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS
+  IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  --------------------------------------------------------------------------
+  (based on BSD Open Source License)
+=end
+
+
 =begin rdoc
 
 Look at FIT
 check for method=
 arity on method returns arg count
-look at bugzilla for whether there's a bug logged against test
 webgen
+cell validation in the excel spreadsheet
 
   Spreadsheet Components
   ======================
@@ -116,18 +152,17 @@ webgen
   :continue         Continue from a bookmark
   :pagecount        Continue for n pages after a bookmark
   
-      book = Spreadsheet::Book.new(spreadsheet, { :visible => true }
-      book.each do |sheet|
-        puts '---' + sheet.name + '---'
-        puts sheet.to_s
-          sheet.each do |record|
-            record.each do |cell|
-               puts "\t#{cell.header}=#{cell.value}"
-            end
-          end
-        end  
+  book = Spreadsheet::Book.new(spreadsheet, { :visible => true })
+  book.each do |sheet|
+    puts '---' + sheet.name + '---'
+    puts sheet.to_s
+    sheet.each do |record|
+      record.each do |cell|
+         puts "\t#{cell.header}=#{cell.value}"
       end
-   
+    end
+  end  
+
   TODO: 
   Handle true/false, numbers so we're not passing in the string
   Work out how to handle verification - maybe using tab have a static method?
@@ -141,27 +176,7 @@ module Spreadsheet
 
   # Singleton Class to store Excel Constant Variables
   class ExcelConst; include Singleton; end
-
-  # This is for testing only
-  # Will be removed later
-  class Timer
-    def initialize(caller)
-      @caller = caller
-      self.reset
-    end
-    def reset
-      @split = Time.now
-      @ct = 1
-    end
-    def split
-      current_split = Time.now - @split
-      @split = Time.now
-      time =  "__TIME__#{@ct}__" + @caller + '-' + current_split.to_s 
-      @ct += 1
-      puts time if current_split > 0.1
-    end
-  end
-  
+ 
   # As the spreadsheet is used, bookmarks are dropped with each 
   # read of a cell into a .bookmarks file. Then the user can 
   # continue from the last read cell. This is useful in the 
@@ -326,10 +341,9 @@ module Spreadsheet
   class Book
     require 'win32ole'
     attr_accessor :visible, :continue, :pagecount
-    attr_reader :filename, :bookmark 
+    attr_reader :filename, :bookmark, :options
     def initialize(xlsfile, options={})
       raise ArgumentError, 'XLS file required for Book.new()' if !xlsfile
-      
       # Handle options
       self.visible = false
       self.continue = false
@@ -337,9 +351,11 @@ module Spreadsheet
       
       # Presume that the options are all Book attributes
       # and set the value or the attribute accordingly
-      options.each_key do |k| 
+      @options = options
+      @options.each_key do |k| 
+        next if ! self.methods.include?(k.to_s + '=') # skip if we don't know how to handle
         begin
-          case options[k] 
+          case @options[k] 
           when true, false
             eval("self.#{k.to_s} = #{options[k]}")   
           else
@@ -365,12 +381,14 @@ module Spreadsheet
       # Make sure we close the workbook at exit 
       # or we'll have a dangling Excel process
       at_exit {
-        @o.close if @o
-        if @excel
-          while @excel.ActiveWorkbook
-            @excel.ActiveWorkbook.Close(0)
+        if !@options[:visible]
+          @o.close if @o
+          if @excel 
+            while @excel.ActiveWorkbook
+              @excel.ActiveWorkbook.Close(0)
+            end
+            @excel.Quit();
           end
-          @excel.Quit();
         end
       } 
     end  
@@ -386,6 +404,9 @@ module Spreadsheet
     end
     def ole_object 
       @o
+    end
+    def save
+      @o.Save if @excel
     end
     
     # Sheets store the information about records on the sheet. 
@@ -414,7 +435,7 @@ module Spreadsheet
       @book     = book
       @o        = worksheet
       @name     = worksheet.name
-      self.focus
+      self.select
       # Order here is important because in these functions we
       # will use the class variables from the prior call
       (@lastrow, @lastcol)   = locate_last_data_cell
@@ -428,8 +449,11 @@ module Spreadsheet
       "lastcol  = #{@lastcol}\n"  +
       "style    = #{@style}\n"
     end
-    def focus
+    def select
       @o.Select
+    end
+    def select_home_cell
+      @o.Cells(1,1).Select
     end
     # A cell is a data cell if the color attribute for the cell is not set
     def datacell?(row,col)
@@ -517,13 +541,14 @@ module Spreadsheet
   # Records store the information of a particular row/col of 
   # a worksheet and allow iterating through the Record's Cells
   class Record
+    attr_reader :recordindex
     def initialize(sheet, index)
       @sheet       = sheet
       @book        = sheet.book
       @recordindex = index
+      @range = @sheet.cellrange(@recordindex)
     end
     def each
-      #@sheet.cellrange(@recordindex).Interior.Color = GRAY 
       @sheet.headers.each_index do |cell_index| # should be a value for each header
         cell = @sheet.cell(@recordindex,cell_index + 1)
         return if @book.continue && ! @book.bookmark.found?(:record, cell.recordid)
@@ -533,7 +558,9 @@ module Spreadsheet
           yield cell 
         end
       end
-      #@sheet.cellrange(@recordindex).Interior.Color = ExcelConst::XlColorIndexNone 
+    end
+    def select
+      @range.Select
     end
   end
   
@@ -546,8 +573,9 @@ module Spreadsheet
     ARRAY  = /\A\[[^\]]+\]\Z/
     HASH   = /\A\{[^\}]+\}\Z/
     BOOL   = /\A(true|false)\Z/i
-    NUMBER = /\A\d+\.??\d*?\Z/
-    attr_reader :name, :value, :recordid
+    NUMBER = /\A-?\d+\.??\d*?\Z/
+    attr_reader :name, :value, :recordid, :recordindex,
+                :sheet, :book
 
     def initialize(sheet, record_index, cell_index)
       @sheet       = sheet
@@ -559,11 +587,13 @@ module Spreadsheet
       when :row
         @row = @recordindex 
         @col = @cellindex + @sheet.firstcol - 1 # taking into account the start of the used data range
-        @value = @o.Cells(@row,@col).Value
+        @cell = @o.Cells(@row,@col)
+        @value = @cell.Value
       when :col
         @row = @cellindex + @sheet.firstrow - 1 # taking into account the start of the used data range
         @col = @recordindex 
-        @value = @o.Cells(@row,@col).Value
+        @cell = @o.Cells(@row,@col)
+        @value = @cell.Value
       end
       # Ignore blank values. There's not much use for cells 
       # that are not set so skip them and normalize the return 
@@ -597,6 +627,28 @@ module Spreadsheet
     end
     def header
       @sheet.headers[@cellindex-1]
+    end
+    def color=(c)
+      @cell.Interior.ColorIndex = c
+    end
+    def color
+      @cell.Interior.ColorIndex
+    end
+    def comment=(c)
+      if c && !@cell.Comment
+        c.scan(/(\bexpected\b.+,) (\bgot\b.+)/) do |exp, act|
+          c = "#{exp}\n#{act}"
+        end
+        @cell.AddComment(c) 
+        @cell.Comment.Shape.TextFrame.AutoSize = true
+      end
+    end
+    def selectrecord
+      range = @sheet.cellrange(@recordindex)
+      range.Select
+    end
+    def value=(v)
+      @cell.Value = v
     end
   end
 
