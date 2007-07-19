@@ -588,12 +588,12 @@ module Spreadsheet
         @row = @recordindex 
         @col = @cellindex + @sheet.firstcol - 1 # taking into account the start of the used data range
         @cell = @o.Cells(@row,@col)
-        @value = @cell.Value
+        @value = @cell.Text
       when :col
         @row = @cellindex + @sheet.firstrow - 1 # taking into account the start of the used data range
         @col = @recordindex 
         @cell = @o.Cells(@row,@col)
-        @value = @cell.Value
+        @value = @cell.Text
       end
       # Ignore blank values. There's not much use for cells 
       # that are not set so skip them and normalize the return 
@@ -605,7 +605,6 @@ module Spreadsheet
         @value = eval(@value)
       elsif @value =~ NUMBER
         #handle Excel conversion of integer to float
-        @value.gsub!(/\.0\Z/,'') 
         @value = eval(@value)
       end
       #TODO: find a way to add other handlers

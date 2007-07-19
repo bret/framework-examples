@@ -27,7 +27,6 @@ SPREADSHEET
 - Add excel cell validation (I ave a start on this)
 - Work out best way to support comments in clear-colored cells
 - maybe flash cell (if possible) for spreadsheet errors
-- How to handle numbers when Excel seems to make 1 into 1.0. There 
   may be a way to change how the cell values are read in -> investigate
 
 FIXTURE

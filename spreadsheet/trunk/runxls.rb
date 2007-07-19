@@ -61,7 +61,7 @@ else
     puts sheet.to_s
     sheet.each do |record|
       record.each do |cell|
-         puts "\t#{cell.header}=#{cell.value}"
+         puts "\t#{cell.header}=#{cell.value} [#{cell.value.class}]"
       end
     end
   end  
