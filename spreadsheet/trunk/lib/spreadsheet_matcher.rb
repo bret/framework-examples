@@ -1,27 +1,36 @@
 module Spreadsheet
   module SpreadsheetMatcher 
 
-    module CellMatcher
+    # This should be included in the custom matchers
+    # to allow for cell updates in the spredsheet
+    # based on the test results
+    module CellUpdates
       GREEN = 35
       RED   = 40
       
-      def cell_failed(msg)
+      def indicate_cell_failed(msg)
         @cell.color = RED
         @cell.comment = msg
       end
       
-      def cell_passed
+      def indicate_cell_passed
         @cell.color = GREEN
       end
+      
+      def select_record
+        @cell.selectrecord
+      end
+
     end
     
+    # Match the actual value to the
+    # expected value from the spreadsheet cell
     class MatchCellValue 
-      include CellMatcher
+      include CellUpdates
       
       def initialize(cell)
         @cell = cell
-        @cell.selectrecord
-        cell_passed
+        indicate_cell_passed
         @expected = cell.value
       end
       
@@ -33,13 +42,13 @@ module Spreadsheet
       
       def failure_message
         message = "expected #{@expected.inspect}, got #{@actual.inspect}"
-        cell_failed(message)
+        indicate_cell_failed(message)
         return message, @expected, @actual
       end
       
       def negative_failure_message
         message = "expected #{@actual.inspect} not to equal #{@expected.inspect}"
-        cell_failed(message)
+        indicate_cell_failed(message)
         return message , @expected, @actual
       end
     end
@@ -48,24 +57,26 @@ module Spreadsheet
       MatchCellValue.new(cell)
     end
     
+    # Handle expected and unexpecte exceptions
     class RaiseCellError < Spec::Matchers::RaiseError
-      include CellMatcher
+      include CellUpdates
       
       def initialize(cell, *args)
         @cell = cell
-        cell_passed
+        select_record
+        indicate_cell_passed
         super(*args)
       end
       
       def failure_message
         message = super
         if message
-          cell_failed(message)
+          indicate_cell_failed(message)
         end
       end
       
       def negative_failure_message
-        cell_failed(super)
+        indicate_cell_failed(super)
       end
     end
     

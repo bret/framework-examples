@@ -1,6 +1,6 @@
 =begin license
   ---------------------------------------------------------------------------
-  Copyright (c) 2007, Hugh McGowan
+  Copyright (c) 2007, Hugh McGowan, Rafael Torres
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -584,6 +584,8 @@ module Spreadsheet
       @cellindex   = cell_index
       @recordindex = record_index
       case @sheet.style
+      # We use .Text instead of .Value for the cell contents 
+      # because otherwise numbers are not handled well
       when :row
         @row = @recordindex 
         @col = @cellindex + @sheet.firstcol - 1 # taking into account the start of the used data range

@@ -34,7 +34,7 @@ module Spreadsheet
     # fixtures
     def dispatch
       self.run
-      @sheet.book.save
+      #@sheet.book.save
     end
   end
   
@@ -50,6 +50,7 @@ module Spreadsheet
       
       # Get a reference to the loaded class
       @classname = find_class_by_name(sheet.name)
+      # error check for 
       
       fixture = @classname.new(sheet)
       fixture.dispatch

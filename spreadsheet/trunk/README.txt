@@ -13,6 +13,10 @@ Running a simple example using the spreadsheet lib
 --help gives other options which control where and how much of the 
 spreadsheet to parse
 
+Rubyforge
+========
+has project management tools?
+
 
 TODO 
 ====
@@ -20,14 +24,17 @@ TODO
 GENERAL
 - Add rake for tests and gem creation
 - overview docs
+- make generic layer to interface between fixture and spreadsheet
+this may allow us to redirect output at another place like a DB also input 
 
 SPREADSHEET
 - Testcases
 - Doc cleanup
-- Add excel cell validation (I ave a start on this)
+- Add excel cell validation (I have a start on this)
 - Work out best way to support comments in clear-colored cells
 - maybe flash cell (if possible) for spreadsheet errors
-  may be a way to change how the cell values are read in -> investigate
+- Allow for italicized rows/columns to skip
+- Add support for ()/? for methods and strip
 
 FIXTURE
 - Testcases
@@ -39,4 +46,11 @@ FIXTURE
 - Connect to depot app for sample
 - See if this is the correct way we want to use rspec..may want to run on separate thread,
   etc. See how maybe the rubyfit project handled things
+ - find way to handle multiple tabs so the tests run after each tab
 - Doc cleanup
+- use rspec for the different outputs (xml, html, etc)
+- migrations (rails activerecord equiv for schemas)
+- use the rspec formatters and have them inherit the parent and create a class
+
+RAILS APP?
+- post results
