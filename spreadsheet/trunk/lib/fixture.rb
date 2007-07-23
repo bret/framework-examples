@@ -39,7 +39,7 @@ module Spreadsheet
   end
   
   class FixtureLoader
-    attr_reader :classname, :sheet
+    attr_reader :classname
     
     def initialize(sheet, options=Hash.new)
       # We're making an assumption here
