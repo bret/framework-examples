@@ -3,6 +3,7 @@ $LOAD_PATH.unshift TOPDIR
 
 require 'spec'
 require 'lib/spreadsheet'
+require 'lib/formatter/main_formatter'
 require 'lib/spreadsheet_matcher'
 
 #TODO: move options parsing here instead of
