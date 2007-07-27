@@ -392,14 +392,16 @@ module Spreadsheet
         end
       } 
     end  
-    
+    def [](name)
+      Sheet.new(self, @o.Worksheets(name))
+    end
     def each
       @o.Worksheets.each do |worksheet| 
         next if @o.Worksheets(worksheet.name).Visible == 0              # Skip hidden worksheets
         next if worksheet.name =~ /^#/                                     # Skip commented sheets
         next if worksheet.Tab.ColorIndex != ExcelConst::XlColorIndexNone   # Skip worksheets with colored tabs 
         next if continue && !@bookmark.found?(:sheet, worksheet.name)       # Skip if we have not found a bookmark
-        yield sheet(worksheet) 
+        yield Sheet.new(self, worksheet)
       end
     end
     def ole_object 
@@ -408,24 +410,20 @@ module Spreadsheet
     def save
       @o.Save if @excel
     end
-    
-    # Sheets store the information about records on the sheet. 
-    # In order to allow the user to add comments and have flexibility
-    # with how the data is laid out we have the following requirements:
-    #
-    # * The data will start at the first non-colored cell closest to Cell 'A1'
-    # * Colored cells will be ignored until we hit the first data cell. 
-    # * The header row (this is usually the attribute you're going to set) needs
-    #   to be bolded. We will use which side of the data (top or left) to determine
-    #   if the data is laid out in rows or in columns. 
-    # 
-    # Iterating over the Sheet will return Records which represent the row/column
-    #
-    
-    def sheet(worksheet)
-      Sheet.new(self, worksheet)
-    end
   end
+    
+  # Sheets store the information about records on the sheet. 
+  # In order to allow the user to add comments and have flexibility
+  # with how the data is laid out we have the following requirements:
+  #
+  # * The data will start at the first non-colored cell closest to Cell 'A1'
+  # * Colored cells will be ignored until we hit the first data cell. 
+  # * The header row (this is usually the attribute you're going to set) needs
+  #   to be bolded. We will use which side of the data (top or left) to determine
+  #   if the data is laid out in rows or in columns. 
+  # 
+  # Iterating over the Sheet will return Records which represent the row/column
+  #
   
   class Sheet
     attr_reader :style, :name, :headers, :book,
@@ -491,18 +489,18 @@ module Spreadsheet
         firstrecord = @firstcol
         lastrecord  = @lastcol
       end
-       (firstrecord..lastrecord).each do |record_index|
-        yield self.record(record_index)
+      (firstrecord..lastrecord).each do |record_index|
+        yield Record.new(self, record_index)
       end
     end
     def ole_object
       @o
     end
-    def record (index)
-      Record.new(self, index)
-    end
     def cell (record_index, cell_index)
       Cell.new(self, record_index, cell_index)
+    end
+    def [](index)
+      Record.new(self, index)
     end
   private
     def locate_first_data_cell
@@ -526,7 +524,11 @@ module Spreadsheet
     end
     def locate_headers
       headerrow = @firstrow - 1
-      testcell = @o.Cells(headerrow,@firstcol)
+      if headerrow == 0 
+        testcell = @o.Cells(1,@firstcol)
+      else
+        testcell = @o.Cells(headerrow,@firstcol)
+      end
       if headerrow > 0 && testcell.Font.Bold && testcell.Value.to_s.strip != ''
         style = :row
         headers  = cellrangevals(@firstrow-1, :row)
@@ -561,6 +563,9 @@ module Spreadsheet
     end
     def select
       @range.Select
+    end
+    def [](index)
+      Cell.new(@sheet, @recordindex, index)
     end
   end
   

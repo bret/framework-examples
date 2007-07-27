@@ -5,7 +5,7 @@ require 'spec'
 require 'lib/spreadsheet'
 
 puts `pwd`
-TESTFILE = TOPDIR + '/examples/spreadsheet_parsing.xls'
+TESTFILE = TOPDIR + '/test/parsing.xls'
 
 describe "Book Initialization" do
   it 'should populate the Excel Constants' do
@@ -66,28 +66,147 @@ describe 'Sheet initialization' do
   it 'should should return the name of the worksheet tab'
   it 'should provide metadata with to_s'
 end
-describe 'Sheet style detection' do 
-  it 'should detect style=:row' 
-  it 'should detect style=:col'
-  it 'should find header column for style=:row' 
-  it 'should find header column for style=:col'
+
+describe 'SpreadsheetTab', :shared => true do
+  before(:all) do 
+    @book = Spreadsheet::Book.new(TESTFILE)
+    @sheet = nil
+  end
 end
-describe 'Sheet locate first cell' do 
-  it 'should be able to find the first cell for a :row style'
-  it 'should be able to find the first cell for a :col style'
-  it 'should throw an exception if a first cell cannot be found'
-  it 'should be able to handle a worksheet with a single data cell'
+describe 'BasicStyles', :shared => true do
+  it_should_behave_like 'SpreadsheetTab'
+  it 'should locate the headers' do
+    @sheet.headers.should == ['a','b']
+  end
 end
-describe 'Sheet locate last cell' do 
-  it 'should be able to find the last cell for a :row style'
-  it 'should be able to find the last cell for a :col style'
-  it 'should be able to handle a worksheet with a single data cell'
+
+describe 'Sheet style :col (1)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['ColStyle.1']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 2
+    @sheet.firstcol.should == 1
+    @sheet.lastrow.should  == 7
+    @sheet.lastcol.should  == 2
+  end
 end
-describe 'Sheet locate headers' do 
-  it 'should be able to find the header cells for a :row style'
-  it 'should be able to find the header cells for a :col style'
-  it 'should be able to handle a worksheet with a single data cell'
-  it 'should throw an exception if the worksheet does not have a header row'
+describe 'Sheet style :col (2)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['ColStyle.2']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 2
+    @sheet.firstcol.should == 2
+    @sheet.lastrow.should  == 7
+    @sheet.lastcol.should  == 3
+  end
+end
+describe 'Sheet style :col (3)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['ColStyle.3']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 2
+    @sheet.firstcol.should == 1
+    @sheet.lastrow.should  == 7
+    @sheet.lastcol.should  == 2
+  end
+end
+describe 'Sheet style :col (4)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['ColStyle.4']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 2
+    @sheet.firstcol.should == 2
+    @sheet.lastrow.should  == 7
+    @sheet.lastcol.should  == 3
+  end
+end
+
+describe 'Sheet style :row (1)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['RowStyle.1']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 1
+    @sheet.firstcol.should == 2
+    @sheet.lastrow.should  == 2
+    @sheet.lastcol.should  == 7
+  end
+end
+describe 'Sheet style :row (2)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['RowStyle.2']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 2
+    @sheet.firstcol.should == 2
+    @sheet.lastrow.should  == 3
+    @sheet.lastcol.should  == 7
+  end
+end
+describe 'Sheet style :row (3)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['RowStyle.3']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 1
+    @sheet.firstcol.should == 2
+    @sheet.lastrow.should  == 2
+    @sheet.lastcol.should  == 7
+  end
+end
+describe 'Sheet style :row (4)' do 
+  it_should_behave_like 'BasicStyles'
+  before(:each) do 
+    @sheet = @book['RowStyle.4']
+  end
+  it 'should find the data range' do
+    @sheet.firstrow.should == 2
+    @sheet.firstcol.should == 2
+    @sheet.lastrow.should  == 3
+    @sheet.lastcol.should  == 7
+  end
+end
+
+describe 'Datatypes' do
+  it_should_behave_like 'SpreadsheetTab'
+  before(:each) do
+    @sheet = @book['Datatypes']
+  end
+  it 'should handle integers' do
+    @sheet[2][1].value.class.should == Fixnum
+    @sheet[2][1].value.should == 1
+  end
+  it 'should handle floats' do
+    @sheet[2][2].value.class.should == Float
+    @sheet[2][2].value.should == 2.0
+  end
+  it 'should handle hashes' do
+    @sheet[2][3].value.class.should == Hash
+    @sheet[2][3].value.should == { 'a'=>1, 'b'=>2 }
+  end
+  it 'should handle arrays' do
+    @sheet[2][4].value.class.should == Array
+    @sheet[2][4].value.should == ['c', 'd', 'e']
+  end
+  it 'should handle boolean uppercase' do
+    @sheet[2][5].value.class.should == TrueClass
+    @sheet[2][5].value.should == true
+  end
+  it 'should handle boolean lowercase' do
+    @sheet[2][6].value.class.should == FalseClass
+    @sheet[2][6].value.should == false
+  end
 end
 
 describe 'Sheet data extraction' do
