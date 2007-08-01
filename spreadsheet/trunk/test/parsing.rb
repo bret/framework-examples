@@ -4,7 +4,6 @@ $LOAD_PATH.unshift TOPDIR
 require 'spec'
 require 'lib/spreadsheet'
 
-puts `pwd`
 TESTFILE = TOPDIR + '/test/parsing.xls'
 
 describe "Book Initialization" do
@@ -39,11 +38,6 @@ describe "Book Initialization" do
     book.visible.should be_false
     book.continue.should == 'test'
   end
-  it 'should raise error for invalid options' #do
-  #  lambda {
-  #    book = Spreadsheet::Book.new(TESTFILE, {:unsupportedoption => true} )
-  #  }.should raise_error()
-  #end
   it 'should have have a method for returning the filename' do
     book = Spreadsheet::Book.new(TESTFILE)
     book.filename.should == TESTFILE
@@ -52,19 +46,6 @@ describe "Book Initialization" do
     book = Spreadsheet::Book.new(TESTFILE)
     book.ole_object.class.should == WIN32OLE
   end
-end
-
-describe 'Book worksheet iteration' do
-  it 'should skip hidden tabs' 
-  it 'should skip tabs starting with a comment' 
-  it 'should skip tabs that have a color' 
-end
-
-describe 'Sheet initialization' do 
-  it 'should provide the reference to the Book'
-  it 'should return a valid ole_object for the Sheet' 
-  it 'should should return the name of the worksheet tab'
-  it 'should provide metadata with to_s'
 end
 
 describe 'SpreadsheetTab', :shared => true do
@@ -209,24 +190,87 @@ describe 'Datatypes' do
   end
 end
 
-describe 'Sheet data extraction' do
-  it 'should select the worksheet without throwing an exception'
-  it 'should be able to select the home cell without throwing an exception'
-  it 'should not detect a colored cell as a datacell'
-  it 'should detect a cell without color as a datacell'
-  it 'should be able to get a range for a :row style'
-  it 'should be able to get a range for a :col style'
-  it 'should be able to get the range values from a range for a :row style'
-  it 'should be able to get the range values from a range for a :col style'
-  it 'should be able to get the worksheet column name from a column index'
-  it 'should provide a Record from and row/col index'
-  it 'should provide a Cell from a Record index'
+describe 'Whitespace' do
+  it_should_behave_like 'SpreadsheetTab'
+  before(:each) do
+    @sheet = @book['Whitespace']
+  end
+  it 'should trim leading whitespace' do
+    @sheet[2][1].value.should == 'test'
+  end
+  it 'should trim trailing whitespace' do
+    @sheet[2][2].value.should == 'test'
+  end
+  it 'should not trim middle whitespace' do
+    @sheet[2][3].value.should == 'this is a test'
+  end
+  it 'should trim leading and trailing whitespace' do
+    @sheet[2][4].value.should == 'test'
+  end
 end
-describe 'Sheet iteration' do
-  it 'should be able to iterate over :row records'
-  it 'should be able to iterate over :col records'
+
+describe 'Control Flow - Tabs' do
+  it_should_behave_like 'SpreadsheetTab'
+  it 'should not include hidden tabs' do
+    lambda{ @sheet = @book['ControlFlow.hidden'] }.should raise_error
+  end
+  it 'should not include colored tabs' do
+    lambda{ @sheet = @book['ControlFlow.1'] }.should raise_error
+  end
+  it 'should not include commented tabs' do
+    lambda{ @sheet = @book['ControlFlow.2'] }.should raise_error
+  end
+end
+
+describe 'Control Flow - Worksheet' do
+  it_should_behave_like 'SpreadsheetTab'
+  it 'should select worksheet without error' do
+    lambda{ 
+      @sheet = @book['ColStyle.1'] #select called implicitly
+     }.should_not raise_error
+  end
+  it 'should raise error when calling bogus worksheet' do
+    lambda{ 
+      @sheet = @book['Bogus'] #select called implicitly
+    }.should raise_error
+  end
+  it 'should select the home cell without error' do
+    @sheet = @book['ColStyle.1']
+    lambda{ @sheet.select_home_cell }.should_not raise_error
+  end
+  it 'should properly identify data cells' do
+    @sheet = @book['ColStyle.1']
+    @sheet.datacell?(1,1).should == false
+    @sheet.datacell?(1,2).should == false
+    @sheet.datacell?(2,1).should == true
+    @sheet.datacell?(2,2).should == true
+  end
+  it 'should be able to get a range for a :row style' do
+    @sheet = @book['ColStyle.1']
+    lambda{ @sheet.cellrange(2) }.should_not raise_error
+  end
+  it 'should be able to get a range of cell values for a :row style' do
+    @sheet = @book['ColStyle.1']
+    @sheet.cellrangevals(2).should == [1.0,2.0]
+  end
+  it 'should be able to get a range for a :col style' do
+    @sheet = @book['RowStyle.1']
+    @sheet.cellrangevals(2).should == [1.0,2.0]
+  end
+  it 'should be able to get a worksheet column name from a column index' do
+    @sheet = @book['ColStyle.1']
+    @sheet.colname(1).should == 'A'
+    @sheet.colname(2).should == 'B'
+  end
   it 'should gracefully handle a sheet with no data'
   
+end
+
+describe 'Sheet initialization' do 
+  it 'should provide the reference to the Book'
+  it 'should return a valid ole_object for the Sheet' 
+  it 'should should return the name of the worksheet tab'
+  it 'should provide metadata with to_s'
 end
 
 
