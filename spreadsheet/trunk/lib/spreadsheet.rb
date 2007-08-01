@@ -428,6 +428,9 @@ module Spreadsheet
   class Sheet
     attr_reader :style, :name, :headers, :book,
                 :firstrow, :firstcol, :lastrow, :lastcol
+
+    class ObjectError < RuntimeError; end
+                        
     def initialize(book, worksheet)
       # TODO: Add check for duplicates if option set
       @book     = book
@@ -438,8 +441,9 @@ module Spreadsheet
       # will use the class variables from the prior call
       (@lastrow, @lastcol)   = locate_last_data_cell
       (@firstrow, @firstcol) = locate_first_data_cell
-      (@headers, @style)     = locate_headers
+      (@headers, @style)     = locate_headers unless empty_data_sheet? 
     end
+    
     def to_s
       "firstrow = #{@firstrow}\n" +
       "firstcol = #{@firstcol}\n" +
@@ -447,6 +451,7 @@ module Spreadsheet
       "lastcol  = #{@lastcol}\n"  +
       "style    = #{@style}\n"
     end
+    
     def select
       begin
         @o.Select
@@ -454,13 +459,16 @@ module Spreadsheet
         raise ObjectError, "Unable to locate worksheet #{worksheet}"
       end
     end
+    
     def select_home_cell
       @o.Cells(1,1).Select
     end
+    
     # A cell is a data cell if the color attribute for the cell is not set
     def datacell?(row,col)
       @o.Cells(row,col).Interior.ColorIndex == ExcelConst::XlColorIndexNone
     end
+    
     # Get the ole range object for a row or column      
     def cellrange(index, style=@style)
       case style
@@ -470,6 +478,7 @@ module Spreadsheet
         @o.Range("#{colname(index)}#{@firstrow}:#{colname(index)}#{@lastrow}")
       end
     end
+    
     # Get an array of the values of cells in the range describing the row or column      
     def cellrangevals(index, style=@style)
       range = cellrange(index, style)
@@ -480,10 +489,12 @@ module Spreadsheet
         range['Value'].map{ |v| v[0] }
       end
     end
+    
     # Translate a numerical column index to the alpha worksheet column the user sees
     def colname(col)
       @o.Columns(col).address.slice!(/(\w+)/)
     end
+    
     def each
       case @style
       when :row
@@ -497,16 +508,24 @@ module Spreadsheet
         yield Record.new(self, record_index)
       end
     end
+    
     def ole_object
       @o
     end
+    
     def cell (record_index, cell_index)
       Cell.new(self, record_index, cell_index)
     end
+    
     def [](index)
       Record.new(self, index)
     end
+  
   private
+    
+    ##
+    # Returns the fist row and column with data in the worksheet. If no data
+    # is found before the last row and column, these same values are returned. 
     def locate_first_data_cell
      (1..@lastrow).each do |row|
        (1..@lastcol).each do |col|
@@ -515,17 +534,19 @@ module Spreadsheet
           end
         end
       end
-      raise ObjectError, "Unable to locate first data cell on worksheet '#{@sheet.name}'"
+      return @lastrow, @lastcol
     end
+    
+    ##
+    # Returns the last row and column with data in the worksheet. If no
+    # data is found (i.e., the sheet is empty) 1, 1 is returned.
     def locate_last_data_cell
-      row = @o.Cells.Find('What'            => '*',
-                          'SearchDirection' => ExcelConst::XlPrevious,
-                          'SearchOrder'     => ExcelConst::XlByRows).Row
-      col = @o.Cells.Find('What'            => '*',
-                          'SearchDirection' => ExcelConst::XlPrevious,
-                          'SearchOrder'     => ExcelConst::XlByColumns).Column
-      return row, col
+      find_clause = @o.Cells.Find('What'            => '*',
+                                  'SearchDirection' => ExcelConst::XlPrevious,
+                                  'SearchOrder'     => ExcelConst::XlByRows)
+      row, col = find_clause.nil? ? [1,1] : [find_clause.Row, find_clause.Column]
     end
+    
     def locate_headers
       headerrow = @firstrow - 1
       if headerrow == 0 
@@ -542,6 +563,16 @@ module Spreadsheet
       end
       return headers, style
     end
+    
+    ##
+    # Returns true if the worksheet is both a data sheet and empty.
+    # Data sheets have uncolored tabs and their tab names do NOT 
+    # start with a '#'.
+    def empty_data_sheet?
+      @o.Tab.ColorIndex == -4142 && @o.name[0..0] != '#' && 
+        @firstrow == @lastrow && @firstcol == @lastcol
+    end
+    
   end
 
   # Records store the information of a particular row/col of 
