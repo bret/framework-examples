@@ -448,7 +448,11 @@ module Spreadsheet
       "style    = #{@style}\n"
     end
     def select
-      @o.Select
+      begin
+        @o.Select
+      rescue WIN32OLERuntimeError
+        raise ObjectError, "Unable to locate worksheet #{worksheet}"
+      end
     end
     def select_home_cell
       @o.Cells(1,1).Select
@@ -456,6 +460,15 @@ module Spreadsheet
     # A cell is a data cell if the color attribute for the cell is not set
     def datacell?(row,col)
       @o.Cells(row,col).Interior.ColorIndex == ExcelConst::XlColorIndexNone
+    end
+    # Get the ole range object for a row or column      
+    def cellrange(index, style=@style)
+      case style
+      when :row
+        @o.Range("#{colname(@firstcol)}#{index}:#{colname(@lastcol)}#{index}")
+      when :col
+        @o.Range("#{colname(index)}#{@firstrow}:#{colname(index)}#{@lastrow}")
+      end
     end
     # Get an array of the values of cells in the range describing the row or column      
     def cellrangevals(index, style=@style)
@@ -465,15 +478,6 @@ module Spreadsheet
         range['Value'][0] 
       when :col
         range['Value'].map{ |v| v[0] }
-      end
-    end
-    # Get the ole range object for a row or column      
-    def cellrange(index, style=@style)
-      case style
-      when :row
-        @o.Range("#{colname(@firstcol)}#{index}:#{colname(@lastcol)}#{index}")
-      when :col
-        @o.Range("#{colname(index)}#{@firstrow}:#{colname(index)}#{@lastrow}")
       end
     end
     # Translate a numerical column index to the alpha worksheet column the user sees
