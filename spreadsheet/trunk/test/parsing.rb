@@ -263,7 +263,10 @@ describe 'Control Flow - Worksheet' do
     @sheet.colname(1).should == 'A'
     @sheet.colname(2).should == 'B'
   end
-  it 'should gracefully handle a sheet with no data'
+  it 'should gracefully handle a sheet with no data' do
+    @sheet = @book['Blank']
+    lambda{ @sheet.cellrange(2) }.should_not raise_error
+  end
   
 end
 
