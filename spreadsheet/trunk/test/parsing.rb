@@ -55,6 +55,7 @@ describe 'SpreadsheetTab', :shared => true do
     @sheet = nil
   end
 end
+
 describe 'BasicStyles', :shared => true do
   it_should_behave_like 'SpreadsheetTab'
   it 'should locate the headers' do
@@ -267,14 +268,31 @@ describe 'Control Flow - Worksheet' do
     @sheet = @book['Blank']
     lambda{ @sheet.cellrange(2) }.should_not raise_error
   end
-  
 end
 
 describe 'Sheet initialization' do 
-  it 'should provide the reference to the Book'
-  it 'should return a valid ole_object for the Sheet' 
-  it 'should should return the name of the worksheet tab'
-  it 'should provide metadata with to_s'
+  it_should_behave_like 'SpreadsheetTab'
+  
+  it 'should provide the reference to the Book' do
+    @book['ColStyle.1'].book.class.should == Spreadsheet::Book
+  end
+  
+  it 'should return a valid ole_object for the Sheet' do
+    @book['ColStyle.1'].ole_object.class.should == WIN32OLE
+  end
+  
+  it 'should return the name of the worksheet tab' do
+    @book['ColStyle.1'].name.should == 'ColStyle.1'
+  end
+  
+  it 'should provide metadata with to_s' do
+    metadata = "firstrow = 2\n" + 
+               "firstcol = 1\n" +
+               "lastrow  = 7\n" +
+               "lastcol  = 2\n" +
+               "style    = row\n"
+    @book['ColStyle.1'].to_s.should == metadata
+  end
 end
 
 
