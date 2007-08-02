@@ -1,6 +1,7 @@
 TOPDIR = File.join(File.dirname(__FILE__), '..')
 $LOAD_PATH.unshift TOPDIR
 
+
 require 'spec'
 require 'lib/spreadsheet'
 
