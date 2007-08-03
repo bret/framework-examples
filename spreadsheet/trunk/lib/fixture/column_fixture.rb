@@ -6,9 +6,9 @@ module Spreadsheet
     class ColumnFixture < BaseFixture
       
       def create_test_fixtures
-        classname = find_class_by_name(@sheet.name)
+        
         @sheet.each do |record|
-          test_fixture = classname.new(@sheet)
+          test_fixture = @classname.new(@sheet)
           record.each do |cell|
             if self.methods.include?(cell.header + '=')
               test_fixture.send "#{cell.header}=",  cell.value
