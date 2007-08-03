@@ -14,6 +14,7 @@ module Spreadsheet
       
       def initialize(sheet)
         @sheet = sheet
+        @classname = find_class_by_name(sheet.name)
       end
   
       def run
