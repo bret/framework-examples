@@ -1,6 +1,6 @@
-require 'lib/column_fixture'
+require 'lib/fixture/column_fixture'
 
-class MathFunctions < Spreadsheet::ColumnFixture
+class MathFunctions < Spreadsheet::Fixture::ColumnFixture
   attr_accessor :x, :y
   def add
     x+y

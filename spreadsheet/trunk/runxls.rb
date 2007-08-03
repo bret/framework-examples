@@ -49,8 +49,8 @@ options = {
 } 
 
 if opt[:fixture_path]
-  require 'lib/fixture'
-  runner = Spreadsheet::FixtureRunner.new
+  require 'lib/fixture_runner'
+  runner = Spreadsheet::Runner::FixtureRunner.new
   runner.add(spreadsheet, options)
   runner.execute
 else
