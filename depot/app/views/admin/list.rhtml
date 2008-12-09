@@ -1,0 +1,52 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails"
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com for more book information.
+-->
+<h1>Product Listing</h1>
+
+<table cellpadding="5" cellspacing="0">
+<% 
+odd_or_even = 0
+for product in @products 
+  odd_or_even = 1 - odd_or_even 
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+
+    <td>
+      <img width="60" height="70" src="<%= product.image_url %>"/>
+    </td>
+
+    <td width="60%">
+      <span class="ListTitle"><%= h(product.title) %></span><br />
+      <%= h(truncate(product.description, 80)) %>
+    </td>
+
+    <td align="right">
+      <%= product.date_available.strftime("%y-%m-%d") %><br/>
+      <strong>$<%= sprintf("%0.2f", product.price) %></strong>
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Show', :action => 'show', :id => product %><br/>
+      <%= link_to 'Edit', :action => 'edit', :id => product %><br/>
+      <%= link_to 'Destroy', { :action => 'destroy', :id => product },
+                             :confirm => "Are you sure?" %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%=  if @product_pages.current.previous 
+       link_to("Previous page", { :page => @product_pages.current.previous })
+     end
+%>
+
+<%= if @product_pages.current.next 
+      link_to("Next page", { :page => @product_pages.current.next })
+    end
+%>
+
+<br />
+
+<%= link_to 'New product', :action => 'new' %>

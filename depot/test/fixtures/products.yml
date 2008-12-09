@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+p1:
+  id:              1
+  title:           p1
+  description:     Product 1
+  image_url:       http://url1
+  price:           12.34
+  date_available:  2005-1-1
+
+p2:
+  id:              2
+  title:           p2
+  description:     Product 2
+  image_url:       http://url2
+  price:           23.45
+  date_available:  2003-1-1

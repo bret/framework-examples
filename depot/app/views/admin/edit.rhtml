@@ -1,0 +1,14 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails"
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com for more book information.
+-->
+<h1>Editing product</h1>
+
+<%= start_form_tag :action => 'update', :id => @product %>
+  <%= render_partial "form" %>
+  <%= submit_tag "Edit" %>
+<%= end_form_tag %>
+
+<%= link_to 'Show', :action => 'show', :id => @product %> |
+<%= link_to 'Back', :action => 'list' %>
