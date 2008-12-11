@@ -4,7 +4,7 @@ require 'watir'
 class Depot
   class << self
     def reset_database
-      Dir.chdir 'C:\work\watirteach\depot' do
+      Dir.chdir File.dirname(__FILE__) + '/../../../depot' do
         unless system 'mysql -u root -ppassword depot_development < db\product_data.sql'
           raise 'database error'
         end
