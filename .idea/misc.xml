@@ -10,7 +10,7 @@
   <component name="ProjectDetails">
     <option name="projectName" value="framework-examples" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Ruby SDK 1.8.6 (C:\ruby-186-26\bin\ruby.exe)" project-jdk-type="RUBY_SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Ruby SDK 1.8.6 (C:\Ruby\bin\ruby.exe)" project-jdk-type="RUBY_SDK" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
     <option name="mySupportsUserInfoFilter" value="true" />
