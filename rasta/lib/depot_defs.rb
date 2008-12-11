@@ -65,11 +65,17 @@ module Depot_Defs
   def pay_using(l_select)
     $br.select_list(:id, 'order_pay_type').select"#{l_select}"
   end
+  def product_listing_heading
+    $br.h1(:text, 'Product Listing')
+  end
   def products_link
     $br.link(:text, 'Products')
   end
   def purchase_total_cell
     $br.cell(:id, 'totalcell')
+  end
+  def new_product_title_span(l_title)
+    $br.span(:text, "#{l_title}")
   end
   def shipping_address_text_field
     $br.text_field(:id, 'order_address')
