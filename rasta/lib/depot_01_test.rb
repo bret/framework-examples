@@ -10,6 +10,7 @@ $site = "http://localhost:3000/store"
 
 class Tests < Watir::TestCase
 
+
   include Depot_Defs
 
   def test_01_add_book_to_cart
