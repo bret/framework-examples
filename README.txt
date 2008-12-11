@@ -1,5 +1,6 @@
 Running the sample application (depot)
 
+NOTE: all the files needed to run this app are not currently here!
 - use rails 1.2
 - use mysql 5.0
 - see depot/README.txt for more details
