@@ -69,5 +69,52 @@ class Purchase_Book
   def pay_using_list
     $br.select_list(:id, 'order_pay_type')
   end   
-
 end
+
+class AddProductToList
+  include Rasta::Fixture::RastaFixture
+  attr_accessor  :user_name, :user_password, :new_product_title, :new_product_description,
+      :new_product_image_url, :new_product_price, :new_product_year_available,
+      :new_product_month_available, :new_product_day_available,
+      :new_product_hour_available, :new_product_minute_available
+
+  def login
+    user_name_text_field.set("#{user_name}")
+    password_field.set("#{user_password}")
+    login_button.click
+  end
+  def products_link
+    products_link.click
+    return "click"
+  end
+  def new_product_link
+    new_product_link
+    return "click"
+  end
+  def enter_new_product_information
+    new_product_title.set("#{new_product_title}")
+    new_product_description("#{new_product_description}")
+    new_product_image_url_text_field.set("#{new_product_image_url}")
+    new_product_price_text_field.set("#{new_product_price}")
+    new_product_year_available_select_list.set("#{new_product_year_available}")
+    new_product_month_available_select_list.set("#{new_product_month_available}")
+    new_product_day_available_select_list.set("#{new_product_day_available}")
+    new_product_hour_available_select_list.set("#{new_product_hour_available}")
+    new_product_minute_available_select_list.set("#{new_product_minute_available}")
+    return "TRUE"
+  end
+  def new_product_create_button
+    new_product_create_button.click
+    return "click"
+  end
+  def verify_product_page_title
+    verify(product_listing_heading.exist?)
+  end
+  def verify_new_product_title
+    new_product_title_span("#{new_product_title}")
+  end
+  include Depot_Defs
+  include Test::Unit::Assertions
+  include Watir::Assertions
+end
+
