@@ -80,8 +80,8 @@ class AddProductToList
       :new_product_minute_available
 
   include Depot_Defs
-  include Test::Unit::Assertions
-  include Watir::Assertions
+#  include Test::Unit::Assertions
+#  include Watir::Assertions
  
   def admin_login
     $site = "http://localhost:3000/admin"  
@@ -117,11 +117,10 @@ class AddProductToList
     return "click"
   end
   def admin_verify_product_page_title
-    sleep 5
-    verify(admin_product_listing_heading.exist?)
+    admin_product_listing_heading.exist?
   end
   def admin_verify_new_product_title
-    admin_new_product_title_span("#{new_product_title}")
+    admin_new_product_title_span("#{new_product_title}").exist?
   end
 end
 
