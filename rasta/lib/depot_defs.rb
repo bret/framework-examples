@@ -23,49 +23,49 @@ module Depot_Defs
   def link_by_text_click(l_text)
     $br.link(:text, "#{l_text}").click
   end
-  def login_button
+  def admin_login_button
     $br.button(:type, 'submit')
   end
   def new_product_create_button
     $br.button(:type, 'submit')
   end
-  def new_product_day_available_select_list
+  def admin_new_product_day_available_select_list
     $br.select_list(:id, 'product_date_available_3i')
   end
-  def new_product_description
-    $br.textarea(:id, 'product_description')
+  def admin_new_product_description
+    $br.text_field(:id, 'product_description')
   end
-  def new_product_hour_available_select_list
+  def admin_new_product_hour_available_select_list
     $br.select_list(:id, 'product_date_available_4i')
   end
-  def new_product_image_url_text_field
+  def admin_new_product_image_url_text_field
     $br.text_field(:id, 'product_image_url')
   end
   def new_product_link
     $br.link(:text, 'New product')
   end
-  def new_product_minute_available_select_list
+  def admin_new_product_minute_available_select_list
     $br.select_list(:id, 'product_date_available_5i')
   end
-  def new_product_month_available_select_list
+  def admin_new_product_month_available_select_list
     $br.select_list(:id, 'product_date_available_2i')
   end
-  def new_product_price_text_field
+  def admin_new_product_price_text_field
     $br.text_field(:id, 'product_price')
   end
-  def new_product_title
+  def admin_new_product_title
     $br.text_field(:id, 'product_title')
   end
-  def new_product_year_available_select_list
+  def admin_new_product_year_available_select_list
     $br.select_list(:id, 'product_date_available_1i')
   end
-  def password_field
+  def admin_password_field
     $br.text_field(:id, 'user_password')
   end
   def pay_using(l_select)
     $br.select_list(:id, 'order_pay_type').select"#{l_select}"
   end
-  def product_listing_heading
+  def admin_product_listing_heading
     $br.h1(:text, 'Product Listing')
   end
   def products_link
@@ -74,7 +74,7 @@ module Depot_Defs
   def purchase_total_cell
     $br.cell(:id, 'totalcell')
   end
-  def new_product_title_span(l_title)
+  def admin_new_product_title_span(l_title)
     $br.span(:text, "#{l_title}")
   end
   def shipping_address_text_field
@@ -86,7 +86,7 @@ module Depot_Defs
   def shipping_name_text_field
     $br.text_field(:id, 'order_name')
   end
-  def user_name_text_field
+  def admin_user_name_text_field
     $br.text_field(:id, 'user_name')
   end
 end

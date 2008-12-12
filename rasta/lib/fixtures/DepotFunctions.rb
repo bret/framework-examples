@@ -73,48 +73,55 @@ end
 
 class AddProductToList
   include Rasta::Fixture::RastaFixture
-  attr_accessor  :user_name, :user_password, :new_product_title, :new_product_description,
-      :new_product_image_url, :new_product_price, :new_product_year_available,
-      :new_product_month_available, :new_product_day_available,
-      :new_product_hour_available, :new_product_minute_available
+  attr_accessor  :test_case, :user_name, :user_password, :new_product_title,
+      :new_product_description, :new_product_image_url, :new_product_price,
+      :new_product_year_available, :new_product_month_available,
+      :new_product_day_available, :new_product_hour_available,
+      :new_product_minute_available
 
-  def login
-    user_name_text_field.set("#{user_name}")
-    password_field.set("#{user_password}")
-    login_button.click
-  end
-  def products_link
-    products_link.click
-    return "click"
-  end
-  def new_product_link
-    new_product_link
-    return "click"
-  end
-  def enter_new_product_information
-    new_product_title.set("#{new_product_title}")
-    new_product_description("#{new_product_description}")
-    new_product_image_url_text_field.set("#{new_product_image_url}")
-    new_product_price_text_field.set("#{new_product_price}")
-    new_product_year_available_select_list.set("#{new_product_year_available}")
-    new_product_month_available_select_list.set("#{new_product_month_available}")
-    new_product_day_available_select_list.set("#{new_product_day_available}")
-    new_product_hour_available_select_list.set("#{new_product_hour_available}")
-    new_product_minute_available_select_list.set("#{new_product_minute_available}")
-    return "TRUE"
-  end
-  def new_product_create_button
-    new_product_create_button.click
-    return "click"
-  end
-  def verify_product_page_title
-    verify(product_listing_heading.exist?)
-  end
-  def verify_new_product_title
-    new_product_title_span("#{new_product_title}")
-  end
   include Depot_Defs
   include Test::Unit::Assertions
   include Watir::Assertions
+ 
+  def admin_login
+    $site = "http://localhost:3000/admin"  
+    puts "\nStarting test case #{test_case}\n"
+    goto_site($site)
+    admin_user_name_text_field.set("#{user_name}")
+    admin_password_field.set("#{user_password}")
+    admin_login_button.click
+    return true
+  end
+  def admin_products_link
+    products_link.click
+    return "click"
+  end
+  def admin_new_product_link
+    new_product_link.click
+    return "click"
+  end
+  def admin_enter_new_product_information
+    admin_new_product_title.set("#{new_product_title}")
+    admin_new_product_description.set("#{new_product_description}")
+    admin_new_product_image_url_text_field.set("#{new_product_image_url}")
+    admin_new_product_price_text_field.set("#{new_product_price}")
+    admin_new_product_year_available_select_list.set("#{new_product_year_available}")
+    admin_new_product_month_available_select_list.set("#{new_product_month_available}")
+    admin_new_product_day_available_select_list.set("#{new_product_day_available}")
+    admin_new_product_hour_available_select_list.set("#{new_product_hour_available}")
+    admin_new_product_minute_available_select_list.set("#{new_product_minute_available}")
+    return true
+  end
+  def admin_new_product_create_button
+    new_product_create_button.click
+    return "click"
+  end
+  def admin_verify_product_page_title
+    sleep 5
+    verify(admin_product_listing_heading.exist?)
+  end
+  def admin_verify_new_product_title
+    admin_new_product_title_span("#{new_product_title}")
+  end
 end
 
