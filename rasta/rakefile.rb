@@ -18,6 +18,7 @@ task :reset_db do
   end
 end
 
-
 desc 'Run all tests.'
 task :all => [:purchase_books, :add_books]
+
+task :default => :all

@@ -1,3 +1,7 @@
 #Generated at Fri Dec 12 03:17:37 +0000 2008
 require 'rubygems'
 require 'taza/tasks'
+
+task :default => 'spec:functional'
+
+
