@@ -11,7 +11,7 @@ task :add_books => :reset_db do |t|
 end
 
 task :reset_db do
-  Dir.chdir File.dirname(__FILE__) + '/../../../depot' do
+  Dir.chdir File.dirname(__FILE__) + '/../../depot' do
     unless system 'mysql -u root -ppassword depot_development < db\product_data.sql'
       raise 'database error'
     end
