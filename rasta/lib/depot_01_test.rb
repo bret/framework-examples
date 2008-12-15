@@ -2,10 +2,7 @@ dir = File.dirname(__FILE__)
 
 require "#{dir}\/depot_defs"
 require 'rubygems'
-gem 'ci_reporter'
-require 'ci/reporter/rake/test_unit_loader'
 	
-$site = "#{ENV['site']}"
 $site = "http://localhost:3000/store"
 
 class Tests < Watir::TestCase
