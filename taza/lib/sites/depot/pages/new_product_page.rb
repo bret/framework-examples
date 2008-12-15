@@ -7,5 +7,6 @@ module Depot
     element(:description) {browser.text_field(:id, 'product_description')}
     element(:image_url) {browser.text_field(:id, 'product_image_url')}
     element(:price) {browser.text_field(:id, 'product_price')}
+    element(:create_button) {browser.button(:value, 'Create')}
   end
 end
