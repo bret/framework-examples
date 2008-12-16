@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Spreadsheet::Bookmark)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/spreadsheet.rb, line 213</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">booktitle</span>, <span class="ruby-identifier">continue</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">pagecount</span>=<span class="ruby-keyword kw">nil</span>)
+    
+      <span class="ruby-comment cmt"># The booktitle is name we're associating this bookmark to</span>
+      <span class="ruby-comment cmt"># which for our purpose is essentially the xls filename. This</span>
+      <span class="ruby-comment cmt"># allows us to store separate bookmarks for each spreadsheet</span>
+      <span class="ruby-ivar">@booktitle</span> = <span class="ruby-identifier">booktitle</span>
+      
+      <span class="ruby-comment cmt"># Continue from last saved bookmark or</span>
+      <span class="ruby-comment cmt"># use the bookmark specified by the user</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">continue</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+        <span class="ruby-identifier">bookmarkname</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get</span> 
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Bookmark</span><span class="ruby-operator">::</span><span class="ruby-constant">ObjectNotFound</span>, <span class="ruby-node">&quot;No bookmark found for '#{@booktitle}'&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bookmarkname</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">bookmarkname</span> = <span class="ruby-identifier">continue</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># Track page counts</span>
+      <span class="ruby-ivar">@currentpage</span> = <span class="ruby-value">1</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pagecount</span>
+        <span class="ruby-ivar">@pagecount</span> = <span class="ruby-identifier">pagecount</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid pagecount '#{@pagecount}'&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@pagecount</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@pagecount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">end</span>  
+      
+      <span class="ruby-comment cmt"># Parse the bookmark into it's parts so we can </span>
+      <span class="ruby-comment cmt"># check for it as we read in the Sheet Records and Cells</span>
+      <span class="ruby-ivar">@page</span>, <span class="ruby-ivar">@record</span> = <span class="ruby-identifier">parse_bookmark</span>(<span class="ruby-identifier">bookmarkname</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid record '#{@record}' - argument must be a row or column name&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@record</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@record</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

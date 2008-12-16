@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>cellrange (Spreadsheet::Sheet)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/spreadsheet.rb, line 473</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cellrange</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">style</span>=<span class="ruby-ivar">@style</span>)
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">style</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:row</span>
+        <span class="ruby-ivar">@o</span>.<span class="ruby-constant">Range</span>(<span class="ruby-node">&quot;#{colname(@firstcol)}#{index}:#{colname(@lastcol)}#{index}&quot;</span>)
+      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:col</span>
+        <span class="ruby-ivar">@o</span>.<span class="ruby-constant">Range</span>(<span class="ruby-node">&quot;#{colname(index)}#{@firstrow}:#{colname(index)}#{@lastrow}&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

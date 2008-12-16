@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Spreadsheet::Book)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/spreadsheet.rb, line 345</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">xlsfile</span>, <span class="ruby-identifier">options</span>={})
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'XLS file required for Book.new()'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">xlsfile</span>
+      <span class="ruby-comment cmt"># Handle options</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">visible</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">continue</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pagecount</span> = <span class="ruby-keyword kw">nil</span>
+      
+      <span class="ruby-comment cmt"># Presume that the options are all Book attributes</span>
+      <span class="ruby-comment cmt"># and set the value or the attribute accordingly</span>
+      <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> 
+        <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">methods</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'='</span>) <span class="ruby-comment cmt"># skip if we don't know how to handle</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">k</span>] 
+          <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-keyword kw">false</span>
+            <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;self.#{k.to_s} = #{options[k]}&quot;</span>)   
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;self.#{k.to_s} = '#{options[k]}'&quot;</span>) 
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ArgumentError</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown option #{k}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-ivar">@filename</span> = <span class="ruby-identifier">xlsfile</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">IOError</span>, <span class="ruby-node">&quot;Unable to find file: '#{@filename}'&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-ivar">@filename</span>)
+      <span class="ruby-ivar">@bookmark</span> = <span class="ruby-constant">Bookmark</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@filename</span>, <span class="ruby-identifier">continue</span>, <span class="ruby-identifier">pagecount</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">continue</span>
+
+      <span class="ruby-comment cmt"># Open the workbook and get the ole reference to the workbook object</span>
+      <span class="ruby-ivar">@excel</span> = <span class="ruby-constant">WIN32OLE</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-value str">'excel.Application'</span>) 
+      <span class="ruby-ivar">@o</span> = <span class="ruby-ivar">@excel</span>.<span class="ruby-constant">Workbooks</span>.<span class="ruby-constant">Open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@filename</span>))
+      <span class="ruby-ivar">@excel</span>[<span class="ruby-value str">'Visible'</span>] = <span class="ruby-identifier">visible</span>
+      
+      <span class="ruby-comment cmt"># Get the standard set of Excel constants</span>
+      <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">const_load</span>(<span class="ruby-ivar">@excel</span>, <span class="ruby-constant">ExcelConst</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ExcelConst</span>.<span class="ruby-identifier">constants</span> <span class="ruby-operator">==</span> []
+      
+      <span class="ruby-comment cmt"># Make sure we close the workbook at exit </span>
+      <span class="ruby-comment cmt"># or we'll have a dangling Excel process</span>
+      <span class="ruby-identifier">at_exit</span> {
+        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:visible</span>]
+          <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@o</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@excel</span> 
+            <span class="ruby-keyword kw">while</span> <span class="ruby-ivar">@excel</span>.<span class="ruby-constant">ActiveWorkbook</span>
+              <span class="ruby-ivar">@excel</span>.<span class="ruby-constant">ActiveWorkbook</span>.<span class="ruby-constant">Close</span>(<span class="ruby-value">0</span>)
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-ivar">@excel</span>.<span class="ruby-constant">Quit</span>();
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      } 
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

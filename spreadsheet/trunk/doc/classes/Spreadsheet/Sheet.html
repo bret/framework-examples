@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Spreadsheet::Sheet</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Spreadsheet::Sheet</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/spreadsheet_rb.html">
+                lib/spreadsheet.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000046">cell</a>&nbsp;&nbsp;
+      <a href="#M000041">cellrange</a>&nbsp;&nbsp;
+      <a href="#M000040">cellrangevals</a>&nbsp;&nbsp;
+      <a href="#M000042">colname</a>&nbsp;&nbsp;
+      <a href="#M000039">datacell?</a>&nbsp;&nbsp;
+      <a href="#M000043">each</a>&nbsp;&nbsp;
+      <a href="#M000035">new</a>&nbsp;&nbsp;
+      <a href="#M000044">ole_object</a>&nbsp;&nbsp;
+      <a href="#M000045">record</a>&nbsp;&nbsp;
+      <a href="#M000037">select</a>&nbsp;&nbsp;
+      <a href="#M000038">select_home_cell</a>&nbsp;&nbsp;
+      <a href="#M000036">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">book</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">firstcol</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">firstrow</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">headers</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">lastcol</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">lastrow</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">name</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">style</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000035.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000035.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(book, worksheet)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000046.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000046.html');return false;">
+          <span class="method-name">cell</span><span class="method-args">(record_index, cell_index)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000041.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000041.html');return false;">
+          <span class="method-name">cellrange</span><span class="method-args">(index, style=@style)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get the ole range object for a row or column
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000040.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000040.html');return false;">
+          <span class="method-name">cellrangevals</span><span class="method-args">(index, style=@style)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get an array of the values of cells in the range describing the row or
+column
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000042.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000042.html');return false;">
+          <span class="method-name">colname</span><span class="method-args">(col)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Translate a numerical column index to the alpha worksheet column the user
+sees
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000039.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000039.html');return false;">
+          <span class="method-name">datacell?</span><span class="method-args">(row,col)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A cell is a data cell if the color attribute for the cell is not set
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000043.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000043.html');return false;">
+          <span class="method-name">each</span><span class="method-args">() {|self.record(record_index)| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000044.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000044.html');return false;">
+          <span class="method-name">ole_object</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000045.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000045.html');return false;">
+          <span class="method-name">record</span><span class="method-args">(index)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000037.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000037.html');return false;">
+          <span class="method-name">select</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000038.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000038.html');return false;">
+          <span class="method-name">select_home_cell</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="Sheet.src/M000036.html" target="Code" class="method-signature"
+            onclick="popupCode('Sheet.src/M000036.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

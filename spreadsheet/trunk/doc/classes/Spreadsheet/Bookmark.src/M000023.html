@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>found? (Spreadsheet::Bookmark)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/spreadsheet.rb, line 245</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">found?</span>(<span class="ruby-identifier">how</span>, <span class="ruby-identifier">what</span>)
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">how</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:sheet</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@foundpage</span>
+          <span class="ruby-comment cmt"># increment our page counter and exit if </span>
+          <span class="ruby-comment cmt"># we hit a specified page count</span>
+          <span class="ruby-ivar">@currentpage</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">exit</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@pagecount</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@currentpage</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@pagecount</span>
+          
+          <span class="ruby-comment cmt"># Trap the case when a record is specified </span>
+          <span class="ruby-comment cmt"># for a page and it does not exist</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@foundrecord</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">what</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@page</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">Bookmark</span><span class="ruby-operator">::</span><span class="ruby-constant">ObjectNotFound</span>, <span class="ruby-node">&quot;Record #{@record} does not exist on page #{@page}&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+          
+          <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">what</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@page</span>
+            <span class="ruby-ivar">@foundpage</span> = <span class="ruby-keyword kw">true</span>
+            <span class="ruby-comment cmt"># Set the foundrecord true so that it always </span>
+            <span class="ruby-comment cmt"># passes the comparison if the record is not set</span>
+            <span class="ruby-ivar">@foundrecord</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@record</span>
+            <span class="ruby-keyword kw">true</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-keyword kw">false</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:record</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Bookmark</span><span class="ruby-operator">::</span><span class="ruby-constant">ObjectNotFound</span>, <span class="ruby-value str">'Should never get here: page should have been found first'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@foundpage</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@foundrecord</span>
+          <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">what</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@record</span>
+            <span class="ruby-ivar">@foundrecord</span> = <span class="ruby-keyword kw">true</span>
+            <span class="ruby-keyword kw">true</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-comment cmt"># TODO: RAISE if wrong type. (row is specified but it's a col)</span>
+            <span class="ruby-keyword kw">false</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Don't know how to check bookmark for '#{how}'&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>
