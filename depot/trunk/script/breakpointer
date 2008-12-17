@@ -1,4 +1,0 @@
-#!/Users/dave/ruby1.8/bin/ruby
-require 'rubygems'
-require_gem 'rails'
-require 'breakpoint_client'
