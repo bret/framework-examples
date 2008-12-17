@@ -1,4 +1,5 @@
 # files ignored by git
 rasta/rasta_test_results/*
 taza/artifacts/*
+idea/*
 .~lock.*
