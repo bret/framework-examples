@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+taza_dev = 'c:/work/taza/'
+
+$LOAD_PATH.unshift taza_dev + 'lib'
 APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
 begin
@@ -11,5 +14,5 @@ require 'rubigen/scripts/generate'
 
 ARGV.shift if ['--help', '-h'].include?(ARGV[0])
 RubiGen::Base.use_component_sources! [:taza, :test_unit]
-RubiGen::Base.prepend_sources(RubiGen::PathSource.new(:dev, 'c:/work/taza/generators'))
+RubiGen::Base.prepend_sources(RubiGen::PathSource.new(:dev, taza_dev + 'generators'))
 RubiGen::Scripts::Generate.new.run(ARGV)
