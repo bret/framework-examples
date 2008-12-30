@@ -1,7 +1,17 @@
 #Generated at Fri Dec 12 03:17:37 +0000 2008
 require 'rubygems'
+
+taza_dev = 'c:/work/taza/'
+$LOAD_PATH.unshift taza_dev + 'lib'
 require 'taza/tasks'
 
 task :default => 'spec:functional'
 
 
+require 'cucumber/rake/task'
+
+Cucumber::Rake::Task.new do |t|
+  t.cucumber_opts = "--format pretty"
+  t.step_pattern = "lib/steps/**/*.rb"
+  t.feature_pattern = "spec/features/**/*.feature"
+end
