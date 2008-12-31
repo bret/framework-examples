@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'test/specs/spec_helper'
 require 'depot'
 
 describe "Depot Application" do

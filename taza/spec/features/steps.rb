@@ -1,1 +1,0 @@
-Dir[File.dirname(__FILE__) + "/../../lib/steps/*.rb"].each {|f| require f}
