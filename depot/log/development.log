@@ -4420,3 +4420,460 @@ Completed in 0.01600 (62 reqs/sec) | Rendering: 0.01600 (100%) | DB: 0.00000 (0%
 
 End of component rendering
 Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.14000 (451%) | 200 OK [http://localhost/store/checkout/:id.:format]
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:11:47) [GET]
+  Session ID: be1e2dcd114cdf394533dce7917a8ab2
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/admin" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:11:54) [GET]
+  Session ID: be1e2dcd114cdf394533dce7917a8ab2
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:14:57) [GET]
+  Session ID: be1e2dcd114cdf394533dce7917a8ab2
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:14:59) [GET]
+  Session ID: be1e2dcd114cdf394533dce7917a8ab2
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:15:16) [GET]
+  Session ID: be1e2dcd114cdf394533dce7917a8ab2
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:23:04) [GET]
+  Session ID: be1e2dcd114cdf394533dce7917a8ab2
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:25:59) [GET]
+  Session ID: be1e2dcd114cdf394533dce7917a8ab2
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:28:21) [GET]
+  Session ID: 485ef40882697cd7778bad483c5e6705
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:31:40) [GET]
+  Session ID: 485ef40882697cd7778bad483c5e6705
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:34:45) [GET]
+  Session ID: 485ef40882697cd7778bad483c5e6705
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:34:48) [GET]
+  Session ID: 485ef40882697cd7778bad483c5e6705
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:34:50) [GET]
+  Session ID: 485ef40882697cd7778bad483c5e6705
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:34:51) [GET]
+  Session ID: 485ef40882697cd7778bad483c5e6705
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+Your environment.rb uses the old syntax, it may not continue to work in future releases.
+For upgrade instructions please see: http://manuals.rubyonrails.com/read/book/19
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:14)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+DEPRECATION WARNING: model is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from ./script/../config/..//app/controllers/application.rb:15)
+DEPRECATION WARNING: depend_on is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from model_without_deprecation at C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/deprecated_dependencies.rb:13)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-06 16:37:10) [GET]
+  Session ID: f2bbcba42a1aca4a302547ee1124d86a
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/store" with {:method=>:get}):
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:113:in `handle_dispatch'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:79:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby182-15/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    C:/ruby182-15/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/webrick_server.rb:63:in `dispatch'
+    script/server:51
+
+
+Rendering C:/ruby182-15/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-01-06 16:49:08) [GET]
+  Session ID: d2a6c173cce9f0f7cfe984ab81684931
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM products WHERE (date_available <= now()) ORDER BY date_available desc[0m
+Rendering  within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM products[0m
+Completed in 0.14000 (7 reqs/sec) | Rendering: 0.01500 (10%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store]

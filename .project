@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>depot_demo</name>
+	<name>framework-examples</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -13,5 +13,6 @@
 	</buildSpec>
 	<natures>
 		<nature>org.rubypeople.rdt.core.rubynature</nature>
+		<nature>org.radrails.rails.core.railsnature</nature>
 	</natures>
 </projectDescription>

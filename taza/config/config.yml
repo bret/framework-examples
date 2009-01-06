@@ -1,4 +1,3 @@
 ---
 :browser: :ie
 :driver: :watir
-:default_site: depot

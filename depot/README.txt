@@ -1,12 +1,11 @@
 How to Run this Depot Application
 
-
 Install Rails
-1. "gem install rails -v 1.0 --include-dependencies"
+1. "gem install rails -v 1.0"
 
 Install & Configure MySQL
-1. Install MySQL 4.1. Choose "Typical" Installation. Select the option to add
-   commands to your path.
+1. Install MySQL 4.1 Essentials. Choose "Typical" Installation. 
+   Select the option to add commands to your path.
 2. Configure MySQL with a "Standard Configuation" Server Instance.
 
 Load Database
