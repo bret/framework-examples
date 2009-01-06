@@ -14,3 +14,8 @@ Running tests
 install ruby 186-26
 gem update --system
 gem install watir cucumber rspec win32console roo rasta taza
+
+In each test directory, run:
+rake -f <Rakefile>
+where <Rakefile> is replaced with the name of the Rakefile eg Rakefile, rakefile.rb etc
+
