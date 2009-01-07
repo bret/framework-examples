@@ -1,7 +1,7 @@
 require 'test/specs/spec_helper'
 require 'depot'
 
-describe "Depot Application" do
+describe "Add Book" do
   before do
     Depot::Depot.reset_database
   end

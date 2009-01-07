@@ -44,3 +44,5 @@ depot>ruby script/server
 
 10. Open a web browser to "http://localhost:3000/store".
 
+11. You will see several deprecation warnings. This is normal.
+
