@@ -1,5 +1,4 @@
 require 'test/specs/spec_helper'
-require 'depot'
 
 describe "Add Book" do
   before do

@@ -1,4 +1,6 @@
+ENV['TAZA_ENV'] = "isolation" if ENV['TAZA_ENV'].nil?
 require 'rubygems'
+$LOAD_PATH.unshift File.expand_path(ENV['TAZA_DEV'] + '/lib') if ENV['TAZA_DEV']
 require 'taza'
 
 module Depot
