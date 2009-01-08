@@ -7,7 +7,9 @@ World do
 end
     
 Given 'my cart is empty' do
-  @browser.goto 'http://localhost:3000/store/empty_cart'
+  goto 'store/empty_cart'
+#  empty_cart_page.goto
+#  @browser.goto 'http://localhost:3000/store/empty_cart'
 end
 When /^I add to my cart (.*)$/ do | book_title |
   @browser.goto 'http://localhost:3000/store'
