@@ -7,6 +7,9 @@ module Depot
   include ForwardInitialization
 
   class Depot < ::Taza::Site
+    def page_heading
+      @browser.div(:id, 'banner').text
+    end
     class << self
       def reset_database
         Dir.chdir File.dirname(__FILE__) + '/../../../depot' do

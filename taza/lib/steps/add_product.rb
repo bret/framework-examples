@@ -7,21 +7,19 @@ DEPOT = Depot::Depot.new
 World do
   DEPOT
 end
-    
+
 Given 'my cart is empty' do
-  goto 'store/empty_cart'
-#  empty_cart_page.goto
-#  @browser.goto 'http://localhost:3000/store/empty_cart'
+  empty_cart_page.goto
 end
 When /^I add to my cart (.*)$/ do | book_title |
-  @browser.goto 'http://localhost:3000/store'
-  title = @browser.h3(:text, book_title) 
-  catalog_entry = title.parent
-  catalog_entry.link(:class, 'addtocart').click
-end
+  store_page.goto
+  store_page.add_to_cart_button(book_title).click
+  end
 Then 'the cart is displayed' do
-  @browser.div(:id, 'banner').text.should == 'Your Pragmatic Cart'
+  @browser.url.should == your_cart_page.full_url
+  page_heading.should == 'Your Pragmatic Cart'
 end
+  
 Then /^the order total is (.*)$/ do | total |
-  @browser.cell(:id, 'totalcell').text.should == total
+  your_cart_page.total.should == total
 end
