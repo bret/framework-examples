@@ -3,6 +3,7 @@ $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/..')
 require 'depot'
 
 DEPOT = Depot::Depot.new
+at_exit {DEPOT.close_browser_and_raise_if nil}
 
 World do
   DEPOT
