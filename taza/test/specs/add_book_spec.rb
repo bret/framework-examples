@@ -8,9 +8,8 @@ describe "Add Book" do
     Depot.new do |depot|
       depot.login_flow :name => 'dave', :password => 'secret'
  
-      # not sure how to do this with reference to url in depot.yml
-      depot.browser.goto 'http://localhost:3000/admin/new'
       depot.new_product_page do |page|
+        page.goto
         page.title = 'The Tycoons'
         page.description = 'How Andrew Carnegie, John D. Rockefeller, Jay Gould, and J. P. Morgan Invented the American Supereconomy'
         page.image_url = 'http://ecx.images-amazon.com/images/I/51qobzUJkdL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA240_SH20_OU01_.jpg'
