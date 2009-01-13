@@ -6,8 +6,13 @@ describe "Add Book" do
   end
   it "should allow a book to be added to the catalog" do
     Depot.new do |depot|
-      # open code this
-      depot.login_flow :name => 'dave', :password => 'secret'
+      depot.product_listing_page.goto
+      depot.browser.url.should == depot.login_page.full_url
+      depot.login_page do |page|
+        page.user_name = 'dave'
+        page.password = 'secret'
+        page.login_button.click
+      end
  
       tycoons = {
         :title => 'The Tycoons',
