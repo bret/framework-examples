@@ -6,9 +6,8 @@ describe "Add Book" do
   end
   it "should allow a book to be added to the catalog" do
     Depot.new do |depot|
-      depot.product_listing_page.goto
-      depot.browser.url.should == depot.login_page.full_url
       depot.login_page do |page|
+        page.goto
         page.user_name = 'dave'
         page.password = 'secret'
         page.login_button.click
