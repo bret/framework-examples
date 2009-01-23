@@ -3,3 +3,5 @@ rasta/rasta_test_results/*
 taza/artifacts/*
 idea/*
 .~lock.*
+depot/tmp/sessions/*
+depot/log/*
