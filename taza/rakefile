@@ -1,5 +1,10 @@
-#Generated at Fri Dec 12 03:17:37 +0000 2008
+#Generated at Mon Feb 02 21:38:27 +0000 2009
 require 'rubygems'
-$LOAD_PATH.unshift File.join(ENV['TAZA_DEV'], 'lib') if ENV['TAZA_DEV']
 require 'taza/tasks'
 
+#Taza::Rake::Tasks.new do |t|
+#  file_hole = "artifacts/#{Time.now.to_i}"
+#  t.spec_opts = ["--format html:#{file_hole}/index.html",
+#                  "--format p",
+#                  "--format failing_examples:#{file_hole}/failing_examples.txt"]
+#end

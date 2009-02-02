@@ -11,7 +11,7 @@ end
 require 'rubigen/scripts/generate'
 
 ARGV.shift if ['--help', '-h'].include?(ARGV[0])
-RubiGen::Base.use_component_sources! [:taza, :test_unit]
+RubiGen::Base.use_component_sources! [:watircraft, :test_unit]
 if ENV['TAZA_DEV']
   RubiGen::Base.prepend_sources(
     RubiGen::PathSource.new(:dev, ENV['TAZA_DEV'] + 'generators'))
