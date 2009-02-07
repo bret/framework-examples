@@ -1,2 +1,4 @@
 test:
   url: http://localhost:3000
+local:
+  url: http://localhost:3000
