@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+$LOAD_PATH.unshift ENV['TAZA_DEV'] + 'lib' if ENV['TAZA_DEV']
 APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
 begin
@@ -11,4 +12,8 @@ require 'rubigen/scripts/generate'
 
 ARGV.shift if ['--help', '-h'].include?(ARGV[0])
 RubiGen::Base.use_component_sources! [:watircraft, :test_unit]
+if ENV['TAZA_DEV']
+  RubiGen::Base.prepend_sources(
+    RubiGen::PathSource.new(:dev, ENV['TAZA_DEV'] + 'watircraft_generators'))
+end
 RubiGen::Scripts::Generate.new.run(ARGV)
