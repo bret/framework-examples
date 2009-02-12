@@ -5,3 +5,5 @@ idea/*
 .~lock.*
 depot/tmp/sessions/*
 depot/log/*
+depot/public/_doc/.tmp*
+*~
