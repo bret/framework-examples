@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift File.join(ENV['WATIRCRAFT_DEV'], 'lib') if ENV['WATIRCRAFT_DEV']
 APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
 begin
@@ -13,7 +12,8 @@ require 'rubigen/scripts/generate'
 ARGV.shift if ['--help', '-h'].include?(ARGV[0])
 RubiGen::Base.use_component_sources! [:watircraft, :test_unit]
 if ENV['WATIRCRAFT_DEV']
-  RubiGen::Base.prepend_sources(
-    RubiGen::PathSource.new(:dev, ENV['WATIRCRAFT_DEV'] + 'watircraft_generators'))
+  $LOAD_PATH.unshift File.join(ENV['WATIRCRAFT_DEV'], 'lib')
+  dev_generators = File.join(ENV['WATIRCRAFT_DEV'], 'watircraft_generators')
+  RubiGen::Base.prepend_sources(RubiGen::PathSource.new(:dev, dev_generators))
 end
 RubiGen::Scripts::Generate.new.run(ARGV)
