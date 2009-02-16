@@ -3,13 +3,9 @@
 # upgrade to newer versions of watircraft.
 
 require 'rubygems'
-require 'spec'
-require 'mocha'
 
 $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/../../lib/')
 require 'initialize'
-require 'depot'
+require 'spec_initialize'
 
-Spec::Runner.configure do |config|
-  config.mock_with :mocha
-end
+
