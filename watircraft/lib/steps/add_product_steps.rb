@@ -11,7 +11,7 @@ When /^I add to my cart (.*)$/ do | book_title |
   end
 Then 'the cart is displayed' do
   @browser.url.should == your_cart_page.full_url
-  page_heading.should == 'Your Pragmatic Cart'
+  site.page_heading.should == 'Your Pragmatic Cart'
 end
   
 Then /^the order total is (.*)$/ do | total |
