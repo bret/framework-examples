@@ -3,13 +3,10 @@
 # upgrade to newer versions of watircraft.
 
 require 'spec'
+require 'cucumber'
 $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/..')
-require 'initialize'
-require 'depot'
-
-SITE = Depot::Depot.new
-at_exit {SITE.close}
+require 'site_start'
 
 World do
-  SITE
+  START
 end
