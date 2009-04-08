@@ -7,3 +7,4 @@ depot/tmp/sessions/*
 depot/log/*
 depot/public/_doc/.tmp*
 *~
+console.log
