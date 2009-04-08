@@ -9,3 +9,4 @@ depot/public/_doc/.tmp*
 *~
 console.log
 .externalToolBuilders
+.project
