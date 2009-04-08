@@ -9,5 +9,6 @@ module Depot
       catalog_entry = title.parent
       catalog_entry.link(:class, 'addtocart')
     end
+    element(:continue_shopping_link) {browser.link(:text, 'Continue shopping')}
   end
 end

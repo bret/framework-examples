@@ -4,24 +4,24 @@ require 'spec_helper'
 
 describe "Purchase Book" do
   before :each do
-    goto ''   
+    empty_cart_page.goto
   end
   it 'add a book' do
-    @browser.link(:href, 'http://localhost:3000/store/add_to_cart/4').click
+    store_page.add_to_cart_button('Pragmatic Project Automation').click
     @browser.div(:id, 'banner').text.should == 'Your Pragmatic Cart'
-    @browser.table(:index, 1)[3][2].text.should == 'Pragmatic Project Automation'
-    @browser.cell(:id, 'totalcell').text.should == '$29.95'
+    your_cart_page.items.row(:description => 'Pragmatic Project Automation').should exist
+    your_cart_page.total.should == '$29.95'
   end
   it 'purchase books' do
-    @browser.link(:href, 'http://localhost:3000/store/add_to_cart/4').click
+    @browser.link(:href, Regexp.new('/store/add_to_cart/4')).click
     @browser.link(:text, 'Continue shopping').click
-    @browser.link(:href, 'http://localhost:3000/store/add_to_cart/12').click
+    @browser.link(:href, Regexp.new('/store/add_to_cart/12')).click
     @browser.div(:id, 'banner').text.should == 'Your Pragmatic Cart'
-    @browser.table(:index, 1)[3][2].text.should == 'Pragmatic Project Automation'
-    @browser.table(:index, 1)[3][1].text.should == '1'
-    @browser.table(:index, 1)[4][2].text.should == 'Pragmatic Version Control'
-    @browser.table(:index, 1)[3][1].text.should == '1'
-    @browser.cell(:id, 'totalcell').text.should == '$59.90'
+    your_cart_page do | page |
+      page.items.row(:description => 'Pragmatic Project Automation').quantity.should == '1'
+      page.items.row(:description => 'Pragmatic Version Control').quantity.should == '1'
+      page.total.should == '$59.90'
+    end    
     @browser.link(:text, 'Checkout').click
     @browser.div(:id, 'banner').text.should == 'Checkout'
     @browser.table(:index, 1)[3][2].text.should == 'Pragmatic Project Automation'
